@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark"
+    tools:context=".MainActivity"
+    >
+
+    <TextView
+        android:id="@+id/cityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="İstanbul"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/light"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </TextView>
+
+
+    <TextView
+        android:id="@+id/todayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bugün"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/light"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityText">
+    </TextView>
+
+
+    <ImageView
+        android:id="@+id/weatherImage"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="118dp"
+        android:src="@drawable/ic_sunny"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todayText">
+
+    </ImageView>
+
+
+    <TextView
+        android:id="@+id/celciusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="  26°"
+        android:fontFamily="@font/roboto_bold"
+        android:textAlignment="center"
+        android:textColor="@color/light"
+        android:textSize="64sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weatherImage">
+
+    </TextView>
+
+
+    <TextView
+        android:id="@+id/weatherText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Güneşli"
+        android:textColor="@color/light"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/celciusText">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/windText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rüzgar"
+        android:textColor="@color/light"
+        android:textSize="14sp"
+        android:fontFamily="@font/roboto_medium"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weatherText">
+
+    </TextView>
+
+
+    <RelativeLayout
+        android:id="@+id/weatherRelative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/windText">
+
+        <ImageView
+            android:id="@+id/windImage"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_wind"
+            tools:layout_editor_absoluteX="155dp">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/windSpeedText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_toEndOf="@+id/windImage"
+            android:text="3 km/s"
+            android:textColor="@color/light"
+            android:textSize="14sp">
+
+        </TextView>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/nextFirstDayRelative"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weatherRelative">
+
+
+        <TextView
+            android:id="@+id/nextFirstDayDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_centerVertical="true"
+            android:text="Sal, 02 Nisan"
+            android:textColor="@color/light"
+            android:textSize="14sp">
+
+        </TextView>
+
+
+        <ImageView
+            android:id="@+id/nextFirstDayWeatherImage"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_sunny">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/nextFirstDayCelciusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginEnd="0dp"
+            android:layout_centerVertical="true"
+            android:text="14° - 27°"
+            android:textColor="@color/light"
+            android:textSize="14sp">
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/nextSecondDayRelative"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nextFirstDayRelative">
+
+
+        <TextView
+            android:id="@+id/nextSecondDayDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:text="Çar, 03 Nisan"
+            android:textColor="@color/light"
+            android:textSize="14sp">
+
+        </TextView>
+
+
+        <ImageView
+            android:id="@+id/nextSecondDayWeatherImage"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_cloudy">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/nextSecondDayCelciusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginEnd="0dp"
+            android:text="14° - 27°"
+            android:textColor="@color/light"
+            android:textSize="14sp">
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/nextThirdDayRelative"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nextSecondDayRelative">
+
+
+        <TextView
+            android:id="@+id/nextThirdDayDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="0dp"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginBottom="0dp"
+            android:text="Per, 04 Nisan"
+            android:textColor="@color/light"
+            android:textSize="14sp">
+
+        </TextView>
+
+
+        <ImageView
+            android:id="@+id/nextThirdDayWeatherImage"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_sunny">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/nextThirdDayCelciusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginEnd="0dp"
+            android:text="14° - 27°"
+            android:textColor="@color/light"
+            android:textSize="14sp">
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/nextFourthDayRelative"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nextThirdDayRelative">
+
+
+        <TextView
+            android:id="@+id/nextFourthDayDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:text="Cuma, 05 Nisan"
+            android:textColor="@color/light"
+            android:textSize="14sp">
+
+        </TextView>
+
+
+        <ImageView
+            android:id="@+id/nextFourthDayWeatherImage"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_rainy">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/nextFourthDayCelciusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="0dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="14° - 27°"
+            android:textColor="@color/light"
+            android:textSize="14sp">
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
