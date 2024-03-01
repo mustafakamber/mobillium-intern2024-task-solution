@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <resources>
 
     <string name="app_name">FirstTaskSolution</string>
@@ -17,8 +16,4 @@
     <string name="nextDayGroupTemperatureRangesText">14° - 27°</string>
 
 
-=======
-<resources>
-    <string name="app_name">FirstTaskSolution</string>
->>>>>>> 43ec3845c288fa7f2fcbcac537d0f051990d3c8f
 </resources>
