@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- TextSize -->
+    <dimen name="smallTextSize">14sp</dimen>
+    <dimen name="normalTextSize">16sp</dimen>
+    <dimen name="largeTextSize">20sp</dimen>
+    <dimen name="hugeTextSize">64sp</dimen>
+
+    <!-- MarginSize -->
+    <dimen name="extraSmallMarginSize">4dp</dimen>
+    <dimen name="smallMarginSize">8dp</dimen>
+    <dimen name="mediumMarginSize">12dp</dimen>
+    <dimen name="normalMarginSize">16dp</dimen>
+    <dimen name="wideMarginSize">24dp</dimen>
+    <dimen name="largeMarginSize">32dp</dimen>
+    <dimen name="extraLargeMarginSize">96dp</dimen>
+    <dimen name="hugeMarginSize">104dp</dimen>
+
+    <!-- ImageSize -->
+    <dimen name="smallImageSize">20dp</dimen>
+    <dimen name="mediumImageSize">24dp</dimen>
+    <dimen name="largeImageSize">64dp</dimen>
+
+
+</resources>
