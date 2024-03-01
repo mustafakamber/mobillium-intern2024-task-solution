@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <font-family xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -11,4 +12,19 @@
         android:fontWeight="400"
         android:font="@font/roboto_bold" />
 
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <font
+        android:fontWeight="400"
+        android:font="@font/roboto_regular" />
+    <font
+        android:fontWeight="400"
+        android:font="@font/roboto_medium" />
+    <font
+        android:fontWeight="400"
+        android:font="@font/roboto_bold" />
+
+>>>>>>> 43ec3845c288fa7f2fcbcac537d0f051990d3c8f
 </font-family>

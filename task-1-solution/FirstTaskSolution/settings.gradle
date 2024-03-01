@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pluginManagement {
     repositories {
         google()
@@ -14,3 +15,21 @@ dependencyResolutionManagement {
 }
 rootProject.name = "FirstTaskSolution"
 include ':app'
+=======
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "FirstTaskSolution"
+include ':app'
+>>>>>>> 43ec3845c288fa7f2fcbcac537d0f051990d3c8f
