@@ -6,7 +6,7 @@
         <item name="android:textColorSecondary">@color/dark</item>
         <item name="colorPrimary">@color/light</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/light</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/dark</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -17,49 +17,48 @@
     </style>
 
 
-    <style name="smallRegularTextView">
+    <style name="smallRegularText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">@dimen/smallTextSize</item>
         <item name="android:textStyle">normal</item>
         <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
+        
     </style>
 
-    <style name="smallMediumTextView">
+    <style name="smallMediumText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">@dimen/smallTextSize</item>
         <item name="android:textStyle">normal</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 
 
-    <style name="normalMediumTextView">
+    <style name="normalMediumText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">@dimen/normalTextSize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+    
+    <style name="largeMediumText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/largeTextSize</item>
         <item name="android:textStyle">normal</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 
-
-    <style name="largeMediumTextView">
+    <style name="hugeBoldText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="android:textColor">?android:attr/textColorPrimary</item>
-    </style>
-
-
-    <style name="hugeBoldTextView">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">64sp</item>
+        <item name="android:textSize">@dimen/hugeTextSize</item>
         <item name="android:textStyle">normal</item>
         <item name="android:fontFamily">@font/roboto_bold</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
@@ -71,16 +70,13 @@
         <item name="android:layout_width">@dimen/smallImageSize</item>
         <item name="android:layout_height">@dimen/smallImageSize</item>
     </style>
-
-
+    
     <style name="mediumImageView">
         <item name="android:tint">?attr/colorPrimary</item>
-        <item name="android:layout_marginTop">@dimen/mediumMarginSize</item>
         <item name="android:layout_width">@dimen/mediumImageSize</item>
         <item name="android:layout_height">@dimen/mediumImageSize</item>
     </style>
-
-
+    
     <style name="largeImageView">
         <item name="android:tint">?attr/colorPrimary</item>
         <item name="android:layout_width">@dimen/largeImageSize</item>
