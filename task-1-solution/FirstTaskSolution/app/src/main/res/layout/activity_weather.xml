@@ -12,17 +12,17 @@
 
     <TextView
         android:id="@+id/cityText"
-        android:layout_marginTop="@dimen/largeMarginSize"
-        android:text="@string/cityNameText"
         style="@style/largeMediumTextView"
+        android:layout_marginTop="@dimen/small800VerticalSpacing"
+        android:text="@string/cityNameText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/todayText"
-        android:text="@string/todayText"
         style="@style/smallRegularTextView"
+        android:text="@string/todayText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cityText" />
@@ -30,7 +30,7 @@
     <ImageView
         android:id="@+id/weatherImage"
         style="@style/largeImageView"
-        android:layout_marginTop="@dimen/extraLargeMarginSize"
+        android:layout_marginTop="@dimen/large200VerticalSpacing"
         android:src="@drawable/ic_sunny"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,9 +38,9 @@
 
     <TextView
         android:id="@+id/temperatureText"
-        android:layout_marginTop="@dimen/largeMarginSize"
-        android:text="@string/temperatureText"
         style="@style/hugeBoldTextView"
+        android:layout_marginTop="@dimen/small800VerticalSpacing"
+        android:text="@string/temperatureText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/weatherImage" />
@@ -55,8 +55,8 @@
 
     <TextView
         android:id="@+id/weatherText"
-        android:layout_marginTop="@dimen/normalMarginSize"
         style="@style/normalMediumTextView"
+        android:layout_marginTop="@dimen/small400VerticalSpacing"
         android:text="@string/weatherNameText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,9 +64,9 @@
 
     <TextView
         android:id="@+id/windText"
-        android:layout_marginTop="@dimen/largeMarginSize"
-        android:text="@string/windText"
         style="@style/smallMediumTextView"
+        android:layout_marginTop="@dimen/small800VerticalSpacing"
+        android:text="@string/windText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/weatherText" />
@@ -75,7 +75,7 @@
         android:id="@+id/weatherConstraint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/smallMarginSize"
+        android:layout_marginTop="@dimen/small200VerticalSpacing"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/windText">
@@ -90,11 +90,11 @@
 
         <TextView
             android:id="@+id/windSpeedText"
+            style="@style/smallRegularTextView"
             android:layout_centerVertical="true"
-            android:layout_marginStart="@dimen/extraSmallMarginSize"
+            android:layout_marginStart="@dimen/small100HorizontalSpacing"
             android:layout_toEndOf="@+id/windImage"
             android:text="@string/windSpeedText"
-            style="@style/smallRegularTextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/windImage"
@@ -102,45 +102,42 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/nextDayGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/wideMarginSize"
-        android:layout_marginTop="@dimen/hugeMarginSize"
-        android:layout_marginEnd="@dimen/wideMarginSize"
+        android:layout_marginStart="@dimen/small600HorizontalSpacing"
+        android:layout_marginTop="@dimen/large400VerticalSpacing"
+        android:layout_marginEnd="@dimen/small600HorizontalSpacing"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/weatherConstraint">
-
 
         <TextView
             android:id="@+id/nextFirstDayDateText"
             style="@style/smallRegularTextView"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:layout_marginTop="@dimen/normalMarginSize"
+            android:layout_marginTop="@dimen/small400VerticalSpacing"
             android:text="@string/nextDayGroupFirstDateText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <ImageView
             android:id="@+id/nextFirstDayWeatherImage"
             style="@style/mediumImageView"
+            android:layout_marginTop="@dimen/small300VerticalSpacing"
             android:src="@drawable/ic_sunny"
             app:layout_constraintEnd_toStartOf="@+id/nextFirstDayCelciusText"
             app:layout_constraintStart_toEndOf="@+id/nextFirstDayDateText"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <TextView
             android:id="@+id/nextFirstDayCelciusText"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/normalMarginSize"
-            android:text="@string/nextDayGroupTemperatureRangesText"
             style="@style/smallMediumTextView"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/small400VerticalSpacing"
+            android:text="@string/nextDayGroupTemperatureRangesText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -149,7 +146,7 @@
             style="@style/smallRegularTextView"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:layout_marginTop="@dimen/normalMarginSize"
+            android:layout_marginTop="@dimen/small400VerticalSpacing"
             android:layout_marginBottom="17dp"
             android:text="@string/nextDayGroupSecondDateText"
             app:layout_constraintBottom_toTopOf="@+id/nextThirdDayDateText"
@@ -159,35 +156,35 @@
         <ImageView
             android:id="@+id/nextSecondDayWeatherImage"
             style="@style/mediumImageView"
+            android:layout_marginTop="@dimen/small300VerticalSpacing"
             android:src="@drawable/ic_cloudy"
             app:layout_constraintEnd_toEndOf="@+id/nextFirstDayWeatherImage"
             app:layout_constraintStart_toStartOf="@+id/nextFirstDayWeatherImage"
             app:layout_constraintTop_toBottomOf="@+id/nextFirstDayWeatherImage" />
 
-
         <TextView
             android:id="@+id/nextSecondDayCelciusText"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/normalMarginSize"
-            android:text="@string/nextDayGroupTemperatureRangesText"
             style="@style/smallMediumTextView"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/small400VerticalSpacing"
+            android:text="@string/nextDayGroupTemperatureRangesText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nextFirstDayCelciusText" />
 
         <TextView
             android:id="@+id/nextThirdDayDateText"
+            style="@style/smallRegularTextView"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:layout_marginTop="@dimen/normalMarginSize"
+            android:layout_marginTop="@dimen/small400VerticalSpacing"
             android:text="@string/nextDayGroupThirdDateText"
-            style="@style/smallRegularTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nextSecondDayDateText" />
-
 
         <ImageView
             android:id="@+id/nextThirdDayWeatherImage"
             style="@style/mediumImageView"
+            android:layout_marginTop="@dimen/small300VerticalSpacing"
             android:src="@drawable/ic_sunny"
             app:layout_constraintEnd_toEndOf="@+id/nextSecondDayWeatherImage"
             app:layout_constraintStart_toStartOf="@+id/nextSecondDayWeatherImage"
@@ -195,31 +192,30 @@
 
         <TextView
             android:id="@+id/nextThirdDayCelciusText"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/normalMarginSize"
-            android:text="@string/nextDayGroupTemperatureRangesText"
             style="@style/smallMediumTextView"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/small400VerticalSpacing"
+            android:text="@string/nextDayGroupTemperatureRangesText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nextSecondDayCelciusText" />
 
-
         <TextView
             android:id="@+id/nextFourthDayDateText"
+            style="@style/smallRegularTextView"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:layout_marginTop="@dimen/normalMarginSize"
-            android:layout_marginBottom="@dimen/normalMarginSize"
+            android:layout_marginTop="@dimen/small400VerticalSpacing"
+            android:layout_marginBottom="@dimen/small400VerticalSpacing"
             android:text="@string/nextDayGroupFourthDateText"
-            style="@style/smallRegularTextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nextThirdDayDateText" />
 
-
         <ImageView
             android:id="@+id/nextFourthDayWeatherImage"
             style="@style/mediumImageView"
-            android:layout_marginBottom="@dimen/mediumMarginSize"
+            android:layout_marginTop="@dimen/small300VerticalSpacing"
+            android:layout_marginBottom="@dimen/small300VerticalSpacing"
             android:src="@drawable/ic_rainy"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/nextThirdDayWeatherImage"
@@ -228,17 +224,15 @@
 
         <TextView
             android:id="@+id/nextFourthDayCelciusText"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/normalMarginSize"
-            android:layout_marginBottom="@dimen/normalMarginSize"
-            android:text="@string/nextDayGroupTemperatureRangesText"
             style="@style/smallMediumTextView"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/small400VerticalSpacing"
+            android:layout_marginBottom="@dimen/small400VerticalSpacing"
+            android:text="@string/nextDayGroupTemperatureRangesText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nextThirdDayCelciusText" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
