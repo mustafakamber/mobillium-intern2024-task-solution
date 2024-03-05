@@ -1,7 +1,5 @@
 <resources>
-
     <string name="app_name">FirstTaskSolution</string>
-
     <string name="cityNameText">İstanbul</string>
     <string name="todayText">Bugün</string>
     <string name="temperatureText">26</string>
@@ -14,6 +12,4 @@
     <string name="nextDayGroupThirdDateText">Per, 04 Nisan</string>
     <string name="nextDayGroupFourthDateText">Cum, 05 Nisan</string>
     <string name="nextDayGroupTemperatureRangesText">14° - 27°</string>
-
-
 </resources>

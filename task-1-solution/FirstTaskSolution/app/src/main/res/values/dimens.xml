@@ -1,84 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- TextSize -->
     <dimen name="smallTextSize">14sp</dimen>
-    <dimen name="normalTextSize">16sp</dimen>
+    <dimen name="mediumTextSize">16sp</dimen>
     <dimen name="largeTextSize">20sp</dimen>
-    <dimen name="hugeTextSize">64sp</dimen>
-
+    <dimen name="wideTextSize">64sp</dimen>
     <!-- VerticalSpacing -->
-
-    <!-- SmallVerticalSpacing -->
-    <dimen name="small100VerticalSpacing">4dp</dimen>
-    <dimen name="small200VerticalSpacing">8dp</dimen>
-    <dimen name="small300VerticalSpacing">12dp</dimen>
-    <dimen name="small400VerticalSpacing">16dp</dimen>
-    <dimen name="small500VerticalSpacing">20dp</dimen>
-    <dimen name="small600VerticalSpacing">24dp</dimen>
-    <dimen name="small700VerticalSpacing">28dp</dimen>
-    <dimen name="small800VerticalSpacing">32dp</dimen>
-    <dimen name="small900VerticalSpacing">36dp</dimen>
-    <!-- MediumVerticalSpacing -->
-    <dimen name="medium100VerticalSpacing">40dp</dimen>
-    <dimen name="medium200VerticalSpacing">44dp</dimen>
-    <dimen name="medium300VerticalSpacing">48dp</dimen>
-    <dimen name="medium400VerticalSpacing">52dp</dimen>
-    <dimen name="medium500VerticalSpacing">56dp</dimen>
-    <dimen name="medium600VerticalSpacing">64dp</dimen>
-    <dimen name="medium700VerticalSpacing">72dp</dimen>
-    <dimen name="medium800VerticalSpacing">80dp</dimen>
-    <dimen name="medium900VerticalSpacing">88dp</dimen>
-    <!-- LargeSizeVerticalSpacing -->
-    <dimen name="large100VerticalSpacing">92dp</dimen>
-    <dimen name="large200VerticalSpacing">96dp</dimen>
-    <dimen name="large300VerticalSpacing">100dp</dimen>
-    <dimen name="large400VerticalSpacing">104dp</dimen>
-    <dimen name="large500VerticalSpacing">108dp</dimen>
-    <dimen name="large600VerticalSpacing">112dp</dimen>
-    <dimen name="large700VerticalSpacing">116dp</dimen>
-    <dimen name="large800VerticalSpacing">120dp</dimen>
-    <dimen name="large900VerticalSpacing">124dp</dimen>
-
-
+    <dimen name="tinyVerticalSpacing">8dp</dimen>
+    <dimen name="smallVerticalSpacing">12dp</dimen>
+    <dimen name="mediumVerticalSpacing">16dp</dimen>
+    <dimen name="largeVerticalSpacing">32dp</dimen>
+    <dimen name="wideVerticalSpacing">48dp</dimen>
     <!-- HorizontalSpacing -->
-
-    <!-- SmallHorizontalSpacing -->
-    <dimen name="small100HorizontalSpacing">4dp</dimen>
-    <dimen name="small200HorizontalSpacing">8dp</dimen>
-    <dimen name="small300HorizontalSpacing">12dp</dimen>
-    <dimen name="small400HorizontalSpacing">16dp</dimen>
-    <dimen name="small500HorizontalSpacing">20dp</dimen>
-    <dimen name="small600HorizontalSpacing">24dp</dimen>
-    <dimen name="small700HorizontalSpacing">28dp</dimen>
-    <dimen name="small800HorizontalSpacing">32dp</dimen>
-    <dimen name="small900HorizontalSpacing">36dp</dimen>
-    <!-- MediumHorizontalSpacing -->
-    <dimen name="medium100HorizontalSpacing">40dp</dimen>
-    <dimen name="medium200HorizontalSpacing">44dp</dimen>
-    <dimen name="medium300HorizontalSpacing">48dp</dimen>
-    <dimen name="medium400HorizontalSpacing">52dp</dimen>
-    <dimen name="medium500HorizontalSpacing">56dp</dimen>
-    <dimen name="medium600HorizontalSpacing">64dp</dimen>
-    <dimen name="medium700HorizontalSpacing">72dp</dimen>
-    <dimen name="medium800HorizontalSpacing">80dp</dimen>
-    <dimen name="medium900HorizontalSpacing">88dp</dimen>
-    <!-- LargeSizeHorizontalSpacing -->
-    <dimen name="large100HorizontalSpacing">92dp</dimen>
-    <dimen name="large200HorizontalSpacing">96dp</dimen>
-    <dimen name="large300HorizontalSpacing">100dp</dimen>
-    <dimen name="large400HorizontalSpacing">104dp</dimen>
-    <dimen name="large500HorizontalSpacing">108dp</dimen>
-    <dimen name="large600HorizontalSpacing">112dp</dimen>
-    <dimen name="large700HorizontalSpacing">116dp</dimen>
-    <dimen name="large800HorizontalSpacing">120dp</dimen>
-    <dimen name="large900HorizontalSpacing">124dp</dimen>
-
-
+    <dimen name="smallHorizontalSpacing">4dp</dimen>
+    <dimen name="wideHorizontalSpacing">24dp</dimen>
     <!-- ImageSize -->
     <dimen name="smallImageSize">20dp</dimen>
     <dimen name="mediumImageSize">24dp</dimen>
     <dimen name="largeImageSize">64dp</dimen>
-
-
+    <dimen name="wideImageSize">108dp</dimen>
 </resources>
