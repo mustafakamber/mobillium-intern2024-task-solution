@@ -30,7 +30,7 @@
     <ImageView
         android:id="@+id/weatherImage"
         style="@style/largeImageView"
-        android:layout_marginTop="@dimen/hugeVerticalSpacing"
+        android:layout_marginTop="@dimen/largeVerticalSpacing"
         android:src="@drawable/ic_sunny"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,7 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/hugeHorizontalSpacing"
         android:layout_marginEnd="@dimen/hugeHorizontalSpacing"
-        android:layout_marginBottom="@dimen/hugeVerticalSpacing"
+        android:layout_marginBottom="@dimen/largeVerticalSpacing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
