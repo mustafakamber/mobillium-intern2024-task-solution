@@ -30,7 +30,7 @@
     <ImageView
         android:id="@+id/weatherImage"
         style="@style/largeImageView"
-        android:layout_marginTop="@dimen/wideVerticalSpacing"
+        android:layout_marginTop="@dimen/hugeVerticalSpacing"
         android:src="@drawable/ic_sunny"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,9 +106,9 @@
         android:id="@+id/nextDayGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/wideHorizontalSpacing"
-        android:layout_marginEnd="@dimen/wideHorizontalSpacing"
-        android:layout_marginBottom="@dimen/wideVerticalSpacing"
+        android:layout_marginStart="@dimen/hugeHorizontalSpacing"
+        android:layout_marginEnd="@dimen/hugeHorizontalSpacing"
+        android:layout_marginBottom="@dimen/hugeVerticalSpacing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
