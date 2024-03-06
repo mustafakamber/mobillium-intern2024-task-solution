@@ -7,7 +7,7 @@
     <string name="weatherNameText">Güneşli</string>
     <string name="windText">Rüzgarlı</string>
     <string name="windSpeedText">3 km/s</string>
-    <string name="nextDayGroupFirstDateText">Sal, 02 Nisan</string>
+    <string name="nextDayGroupFirstDateText">Sal, 02 Nisan </string>
     <string name="nextDayGroupSecondDateText">Çar, 03 Nisan</string>
     <string name="nextDayGroupThirdDateText">Per, 04 Nisan</string>
     <string name="nextDayGroupFourthDateText">Cum, 05 Nisan</string>
