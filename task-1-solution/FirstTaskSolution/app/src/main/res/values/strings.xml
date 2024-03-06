@@ -7,9 +7,9 @@
     <string name="weatherNameText">Güneşli</string>
     <string name="windText">Rüzgarlı</string>
     <string name="windSpeedText">3 km/s</string>
-    <string name="nextDayGroupFirstDateText">Salı, 02 Nisan 2024</string>
-    <string name="nextDayGroupSecondDateText">Çarşamba, 03 Nisan 2024</string>
-    <string name="nextDayGroupThirdDateText">Perşembe, 04 Nisan 2024</string>
-    <string name="nextDayGroupFourthDateText">Cuma, 05 Nisan 2024</string>
+    <string name="nextDayGroupFirstDateText">Sal, 02 Nisan</string>
+    <string name="nextDayGroupSecondDateText">Çar, 03 Nisan</string>
+    <string name="nextDayGroupThirdDateText">Per, 04 Nisan</string>
+    <string name="nextDayGroupFourthDateText">Cum, 05 Nisan</string>
     <string name="nextDayGroupTemperatureRangesText">14° - 27°</string>
 </resources>
