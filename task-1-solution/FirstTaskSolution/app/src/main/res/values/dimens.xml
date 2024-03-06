@@ -14,7 +14,7 @@
     <!-- HorizontalSpacing -->
     <dimen name="smallHorizontalSpacing">4dp</dimen>
     <dimen name="mediumHorizontalSpacing">16dp</dimen>
-    <dimen name="hugeHorizontalSpacing">24dp</dimen>
+    <dimen name="largeHorizontalSpacing">24dp</dimen>
     <!-- ImageSize -->
     <dimen name="smallImageSize">20dp</dimen>
     <dimen name="mediumImageSize">24dp</dimen>
