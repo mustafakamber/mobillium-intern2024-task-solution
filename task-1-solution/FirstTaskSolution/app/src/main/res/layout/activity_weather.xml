@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,23 +10,23 @@
 
     <TextView
         android:id="@+id/cityText"
+        style="@style/largeMediumText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/largeMediumText"
         android:layout_marginStart="@dimen/mediumHorizontalSpacing"
-        android:layout_marginEnd="@dimen/mediumHorizontalSpacing"
-        android:textAlignment="center"
         android:layout_marginTop="@dimen/hugeVerticalSpacing"
+        android:layout_marginEnd="@dimen/mediumHorizontalSpacing"
         android:text="@string/cityNameText"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/todayText"
+        style="@style/smallRegularText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/smallRegularText"
         android:text="@string/todayText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,9 +43,9 @@
 
     <TextView
         android:id="@+id/temperatureText"
+        style="@style/hugeBoldText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/hugeBoldText"
         android:layout_marginTop="@dimen/hugeVerticalSpacing"
         android:text="@string/temperatureText"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,9 +54,9 @@
 
     <TextView
         android:id="@+id/degreeMarkText"
+        style="@style/hugeBoldText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/hugeBoldText"
         android:text="@string/degreeMarkText"
         app:layout_constraintBottom_toBottomOf="@id/temperatureText"
         app:layout_constraintStart_toEndOf="@id/temperatureText"
@@ -66,9 +64,9 @@
 
     <TextView
         android:id="@+id/weatherText"
+        style="@style/normalMediumText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/normalMediumText"
         android:layout_marginTop="@dimen/mediumVerticalSpacing"
         android:text="@string/weatherNameText"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,9 +75,9 @@
 
     <TextView
         android:id="@+id/windText"
+        style="@style/smallMediumText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/smallMediumText"
         android:layout_marginTop="@dimen/hugeVerticalSpacing"
         android:text="@string/windText"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,9 +103,9 @@
 
         <TextView
             android:id="@+id/windSpeedText"
+            style="@style/smallRegularText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/smallRegularText"
             android:layout_marginStart="@dimen/smallHorizontalSpacing"
             android:text="@string/windSpeedText"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -121,9 +119,9 @@
         android:id="@+id/nextDayGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/hugeVerticalSpacing"
         android:layout_marginStart="@dimen/largeHorizontalSpacing"
         android:layout_marginEnd="@dimen/largeHorizontalSpacing"
+        android:layout_marginBottom="@dimen/hugeVerticalSpacing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -166,6 +164,8 @@
             android:layout_marginBottom="@dimen/mediumVerticalSpacing"
             android:text="@string/nextDayGroupSecondDateText"
             app:layout_constraintBottom_toTopOf="@id/nextThirdDayDateText"
+            app:layout_constraintEnd_toStartOf="@+id/nextSecondDayWeatherImage"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nextFirstDayDateText" />
 
@@ -195,6 +195,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/mediumVerticalSpacing"
             android:text="@string/nextDayGroupThirdDateText"
+            app:layout_constraintEnd_toStartOf="@+id/nextThirdDayWeatherImage"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nextSecondDayDateText" />
 
@@ -226,6 +228,8 @@
             android:layout_marginBottom="@dimen/mediumVerticalSpacing"
             android:text="@string/nextDayGroupFourthDateText"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/nextFourthDayWeatherImage"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nextThirdDayDateText" />
 

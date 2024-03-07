@@ -13,53 +13,64 @@
         <item name="colorSecondaryVariant">@color/black</item>
         <item name="colorOnSecondary">@color/dark</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/black</item>
+        <item name="android:statusBarColor">@color/dark</item>
+        <!-- Navigation bar color. -->
+        <item name="android:navigationBarColor">@color/dark</item>
         <!-- Customize your theme here. -->
         <item name="colorSurface">@color/dark</item>
     </style>
+
     <style name="smallRegularText">
         <item name="android:textSize">@dimen/smallTextSize</item>
         <item name="android:textStyle">normal</item>
         <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
+
     <style name="smallMediumText">
         <item name="android:textSize">@dimen/smallTextSize</item>
         <item name="android:textStyle">normal</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
+
     <style name="normalMediumText">
         <item name="android:textSize">@dimen/mediumTextSize</item>
         <item name="android:textStyle">normal</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
+
     <style name="largeMediumText">
         <item name="android:textSize">@dimen/largeTextSize</item>
         <item name="android:textStyle">normal</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
+
     <style name="hugeBoldText">
         <item name="android:textSize">@dimen/hugeTextSize</item>
         <item name="android:textStyle">normal</item>
         <item name="android:fontFamily">@font/roboto_bold</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
+
     <style name="smallImageView">
         <item name="android:tint">?attr/colorPrimary</item>
         <item name="android:layout_width">@dimen/smallImageSize</item>
         <item name="android:layout_height">@dimen/smallImageSize</item>
     </style>
+
     <style name="mediumImageView">
         <item name="android:tint">?attr/colorPrimary</item>
         <item name="android:layout_width">@dimen/mediumImageSize</item>
         <item name="android:layout_height">@dimen/mediumImageSize</item>
     </style>
+
     <style name="largeImageView">
         <item name="android:tint">?attr/colorPrimary</item>
         <item name="android:layout_width">@dimen/largeImageSize</item>
         <item name="android:layout_height">@dimen/largeImageSize</item>
     </style>
+
 </resources>
