@@ -16,4 +16,6 @@
 
 <h3 align="left">Ekran Görüntüsü</h3>
 
-<img src="https://i.ibb.co/6wLQRV3/ekran.png" width="312.5" height="650"/>
+| Light Mode  | Dark Mode |
+| ------ | ------ |
+| <img src="https://i.ibb.co/6wLQRV3/ekran.png" width="312.5" height="650"/> | <img src="https://i.ibb.co/4gqdwZJ/light.png" width="312.5" height="650"/> 
