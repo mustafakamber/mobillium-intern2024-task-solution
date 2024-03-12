@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TextSize -->
+    <dimen name="smallTextSize">14sp</dimen>
+    <dimen name="mediumTextSize">16sp</dimen>
+    <dimen name="largeTextSize">20sp</dimen>
+    <dimen name="hugeTextSize">64sp</dimen>
+    <!-- VerticalSpacing -->
+    <dimen name="tinyVerticalSpacing">8dp</dimen>
+    <dimen name="smallVerticalSpacing">12dp</dimen>
+    <dimen name="mediumVerticalSpacing">16dp</dimen>
+    <dimen name="largeVerticalSpacing">24dp</dimen>
+    <dimen name="hugeVerticalSpacing">32dp</dimen>
+    <!-- HorizontalSpacing -->
+    <dimen name="smallHorizontalSpacing">4dp</dimen>
+    <dimen name="mediumHorizontalSpacing">16dp</dimen>
+    <dimen name="largeHorizontalSpacing">24dp</dimen>
+    <!-- ImageSize -->
+    <dimen name="smallImageSize">20dp</dimen>
+    <dimen name="mediumImageSize">24dp</dimen>
+    <dimen name="largeImageSize">64dp</dimen>
+    <dimen name="hugeImageSize">108dp</dimen>
+</resources>
