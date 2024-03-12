@@ -21,6 +21,6 @@
 | Light Mode  | Dark Mode |
 | ------ | ------ |
 | List  | List |
-| ![List Light](https://i.ibb.co/SrmPfVp/list-light.png) | ![List Dark](https://i.ibb.co/s52ZvMM/list-dark.png) |
+| <img src="https://i.ibb.co/SrmPfVp/list-light.png" width="312.5" height="650"/> | <img src="https://i.ibb.co/s52ZvMM/list-dark.png" width="312.5" height="650"/> |
 | Detail  | Detail |
-| ![Detail Light](https://i.ibb.co/4mZwZSk/detail-light.png) | ![Detail Dark](https://i.ibb.co/Tv6m6M9/detail-dark.png) |
+| <img src="https://i.ibb.co/4mZwZSk/detail-light.png" width="312.5" height="650"/> | <img src="https://i.ibb.co/Tv6m6M9/detail-dark.png" width="312.5" height="650"/> |
