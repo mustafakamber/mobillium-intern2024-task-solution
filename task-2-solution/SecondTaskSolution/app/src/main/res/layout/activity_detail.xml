@@ -19,13 +19,13 @@
 
     <TextView
         android:id="@+id/detailActivityCityText"
+        style="@style/largeMediumLightText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:layout_marginEnd="@dimen/smallHorizontalSpacing"
         android:layout_marginStart="@dimen/smallHorizontalSpacing"
-        style="@style/largeMediumLightText"
         android:layout_marginTop="@dimen/mediumVerticalSpacing"
+        android:layout_marginEnd="@dimen/smallHorizontalSpacing"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailActivityRefreshImage"
@@ -33,13 +33,13 @@
 
     <TextView
         android:id="@+id/detailActivityTodayText"
+        style="@style/smallRegularLightText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/smallRegularLightText"
+        android:text="@string/todayText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/detailActivityCityText"
-        android:text="@string/todayText" />
+        app:layout_constraintTop_toBottomOf="@id/detailActivityCityText" />
 
     <ImageView
         android:id="@+id/detailActivityWeatherImage"
@@ -52,9 +52,9 @@
 
     <TextView
         android:id="@+id/detailActivityTemperatureText"
+        style="@style/hugeBoldLightText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/hugeBoldLightText"
         android:layout_marginTop="@dimen/extraLargeVerticalSpacing"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,9 +63,9 @@
 
     <TextView
         android:id="@+id/detailActivityDegreeMarkText"
+        style="@style/hugeBoldLightText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/hugeBoldLightText"
         android:text="@string/degreeMarkText"
         app:layout_constraintBottom_toBottomOf="@id/detailActivityTemperatureText"
         app:layout_constraintStart_toEndOf="@id/detailActivityTemperatureText"
@@ -73,9 +73,9 @@
 
     <TextView
         android:id="@+id/detailActivityWeatherText"
+        style="@style/normalMediumLightText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/normalMediumLightText"
         android:layout_marginTop="@dimen/mediumVerticalSpacing"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,14 +84,14 @@
 
     <TextView
         android:id="@+id/detailActivityWindText"
+        style="@style/smallMediumLightText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/smallMediumLightText"
         android:layout_marginTop="@dimen/extraLargeVerticalSpacing"
+        android:text="@string/windText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/detailActivityWeatherText"
-        android:text="@string/windText" />
+        app:layout_constraintTop_toBottomOf="@id/detailActivityWeatherText" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/detailActivityWeatherConstraint"
@@ -112,9 +112,9 @@
 
         <TextView
             android:id="@+id/detailsActivityWindSpeedText"
+            style="@style/smallRegularLightText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/smallRegularLightText"
             android:layout_marginStart="@dimen/tinyHorizontalSpacing"
             android:layout_toEndOf="@id/detailActivityWindImage"
             android:text="@string/windSpeedText"

@@ -8,24 +8,24 @@
 
     <TextView
         android:id="@+id/listFragmentDateText"
+        style="@style/largeMediumLightText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/largeVerticalSpacing"
-        style="@style/largeMediumLightText"
         android:text="@string/todayDateText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/listFragmentTodayText"
+        style="@style/smallRegularLightText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/todayText"
-        style="@style/smallRegularLightText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/listFragmentDateText"/>
+        app:layout_constraintTop_toBottomOf="@id/listFragmentDateText" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listFragmentRecyclerView"
