@@ -1,5 +1,4 @@
 <resources>
-
     <string name="app_name">SecondTaskSolution</string>
     <string name="cityNameText">İstanbul</string>
     <string name="todayText">Bugün</string>
@@ -15,5 +14,7 @@
     <string name="nextDayGroupThirdDateText">Per, 04 Nisan</string>
     <string name="nextDayGroupFourthDateText">Cum, 05 Nisan</string>
     <string name="nextDayGroupTemperatureRangesText">14° - 27°</string>
-
+    <string name="activityToActivityText">Activity\'den Activity\'e</string>
+    <string name="fragmentToFragmentText">Fragment\'dan Fragment\'a</string>
+    <string name="navFragmentToNavFragmentText">NavFragment\'dan NavFragment\'a</string>
 </resources>

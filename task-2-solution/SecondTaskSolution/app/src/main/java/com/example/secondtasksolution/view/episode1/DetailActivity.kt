@@ -20,21 +20,19 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val cityName = intent.getStringExtra(CITY_NAME)
-        val cityWeatherName = intent.getStringExtra(CITY_WEATHER_NAME)
-        val cityWeatherImage = intent.getIntExtra(CITY_WEATHER_IMAGE,0)
-        val cityTemperature = intent.getIntExtra(CITY_TEMPERATURE,0)
-        //val cityTemperatureMin = intent.getIntExtra(CITY_TEMPERATURE_MIN,0)
-        //val cityTemperatureMax = intent.getIntExtra(CITY_TEMPERATURE_MAX,0)
+        intent.apply {
 
-        with(binding){
+            val cityName = getStringExtra(CITY_NAME)
+            val cityWeatherName = getStringExtra(CITY_WEATHER_NAME)
+            val cityWeatherImage = getIntExtra(CITY_WEATHER_IMAGE, 0)
+            val cityTemperature = getIntExtra(CITY_TEMPERATURE, 0)
 
-            detailActivityCityText.text = cityName
-            detailActivityWeatherImage.setImageResource(cityWeatherImage)
-            detailActivityWeatherText.text = cityWeatherName
-            detailActivityTemperatureText.text =  cityTemperature.toString()
-
+            with(binding){
+                detailActivityCityText.text = cityName
+                detailActivityWeatherImage.setImageResource(cityWeatherImage)
+                detailActivityWeatherText.text = cityWeatherName
+                detailActivityTemperatureText.text =  cityTemperature.toString()
+            }
         }
-
     }
 }

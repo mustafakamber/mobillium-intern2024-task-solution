@@ -38,11 +38,14 @@ class DetailNavFragment : Fragment(R.layout.fragment_detail_nav) {
 
         with(binding){
 
-            detailNavFragmentCityText.text = args.currentCity.cityName
-            detailNavFragmentWeatherImage.setImageResource(args.currentCity.cityWeatherImage)
-            detailNavFragmentWeatherText.text =  args.currentCity.cityWeatherName
-            currentTemperature = args.currentCity.cityTemperature
-            detailNavFragmentTemperatureText.text = currentTemperature.toString()
+            args.currentCity.run {
+
+                detailNavFragmentCityText.text = cityName
+                detailNavFragmentWeatherImage.setImageResource(cityWeatherImage)
+                detailNavFragmentWeatherText.text =  cityWeatherName
+                currentTemperature = cityTemperature
+                detailNavFragmentTemperatureText.text = currentTemperature.toString()
+            }
 
             detailNavFragmentRefreshImage.setOnClickListener {
 
@@ -50,7 +53,6 @@ class DetailNavFragment : Fragment(R.layout.fragment_detail_nav) {
                 currentTemperature = randomTemperature
 
                 detailNavFragmentTemperatureText.text = currentTemperature.toString()
-
             }
 
             detailNavFragmentUpdateDataButton.setOnClickListener {
@@ -64,8 +66,6 @@ class DetailNavFragment : Fragment(R.layout.fragment_detail_nav) {
                 backToListNavFragment()
             }
         }
-
-
     }
 
     override fun onDestroyView() {
@@ -74,8 +74,7 @@ class DetailNavFragment : Fragment(R.layout.fragment_detail_nav) {
     }
 
     private fun backToListNavFragment(){
-        findNavController()
-            .navigate(DetailNavFragmentDirections.actionDetailNavFragmentToListNavFragment())
+        findNavController().popBackStack()
     }
 
 }

@@ -13,13 +13,14 @@ import com.example.secondtasksolution.util.Constant.CITY_NAME
 import com.example.secondtasksolution.util.Constant.CITY_TEMPERATURE
 import com.example.secondtasksolution.util.Constant.CITY_WEATHER_IMAGE
 import com.example.secondtasksolution.util.Constant.CITY_WEATHER_NAME
+import com.example.secondtasksolution.util.Extension.getFragment
 
 
 class DetailFragment : Fragment(R.layout.fragment_detail) {
 
-   private var fragmentDetailBinding : FragmentDetailBinding? = null
+    private var fragmentDetailBinding : FragmentDetailBinding? = null
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(fragmentDetailBinding) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
 
         val binding = FragmentDetailBinding.bind(view)
@@ -27,19 +28,20 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                backToListFragment()
+                ListFragment().getFragment(context as AppCompatActivity)
             }
         }
 
         requireActivity().onBackPressedDispatcher.addCallback(callback)
 
         val bundle = arguments
-        if (bundle != null) {
 
-            val cityName = bundle.getString(CITY_NAME)
-            val cityWeatherName = bundle.getString(CITY_WEATHER_NAME)
-            val cityWeatherImage = bundle.getInt(CITY_WEATHER_IMAGE,0)
-            val cityTemperature = bundle.getInt(CITY_TEMPERATURE,0)
+        bundle?.run {
+
+            val cityName = getString(CITY_NAME)
+            val cityWeatherName = getString(CITY_WEATHER_NAME)
+            val cityWeatherImage = getInt(CITY_WEATHER_IMAGE,0)
+            val cityTemperature = getInt(CITY_TEMPERATURE,0)
 
             with(binding){
                 detailFragmentCityText.text = cityName
@@ -55,16 +57,6 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     override fun onDestroyView() {
         super.onDestroyView()
         fragmentDetailBinding = null
-    }
-
-    private fun backToListFragment(){
-
-        val fragment = ListFragment()
-        val fragmentManager = (requireContext() as AppCompatActivity).supportFragmentManager
-        fragmentManager.beginTransaction().apply {
-            replace(R.id.fragmentToFragment, fragment).commit()
-        }
-
     }
 
 }

@@ -2,9 +2,11 @@ package com.example.secondtasksolution.view.episode2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.example.secondtasksolution.R
 import com.example.secondtasksolution.databinding.ActivityFragmentToFragmentBinding
+import com.example.secondtasksolution.util.Extension.getFragment
 
 class FragmentToFragmentActivity : AppCompatActivity() {
 
@@ -15,14 +17,27 @@ class FragmentToFragmentActivity : AppCompatActivity() {
         binding = ActivityFragmentToFragmentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        replaceFragment(ListFragment())
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                finish()
+            }
+        }
+
+        this@FragmentToFragmentActivity.onBackPressedDispatcher.addCallback(callback)
+
+        ListFragment().getFragment(this)
+
     }
 
-    private fun replaceFragment(fragment: Fragment) {
+    /*
+    private fun replaceFragment() {
+
+        val fragment = DetailFragment()
         val fragmentManager = supportFragmentManager
         fragmentManager.beginTransaction().apply {
             replace(R.id.fragmentToFragment, fragment)
             commit()
         }
     }
+     */
 }

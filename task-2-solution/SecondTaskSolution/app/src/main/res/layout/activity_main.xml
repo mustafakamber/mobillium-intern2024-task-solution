@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    tools:context=".view.main.MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/activityToActivityButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/largeHorizontalSpacing"
+                    android:layout_marginTop="@dimen/mediumVerticalSpacing"
+                    android:layout_marginEnd="@dimen/largeHorizontalSpacing"
+                    android:layout_marginBottom="@dimen/mediumVerticalSpacing"
+                    android:background="@drawable/rectangle_white_button_background"
+                    android:text="@string/activityToActivityText" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/fragmentToFragmentButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/largeHorizontalSpacing"
+                    android:layout_marginTop="@dimen/mediumVerticalSpacing"
+                    android:layout_marginEnd="@dimen/largeHorizontalSpacing"
+                    android:layout_marginBottom="@dimen/mediumVerticalSpacing"
+                    android:background="@drawable/rectangle_white_button_background"
+                    android:text="@string/fragmentToFragmentText" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/navFragmentToNavFragmentButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/largeHorizontalSpacing"
+                    android:layout_marginTop="@dimen/mediumVerticalSpacing"
+                    android:layout_marginEnd="@dimen/largeHorizontalSpacing"
+                    android:layout_marginBottom="@dimen/mediumVerticalSpacing"
+                    android:background="@drawable/rectangle_white_button_background"
+                    android:text="@string/navFragmentToNavFragmentText" />
+
+        </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

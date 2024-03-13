@@ -2,6 +2,7 @@ package com.example.secondtasksolution.view.episode3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import com.example.secondtasksolution.databinding.ActivityNavigationToNavigationBinding
 
 class NavigationToNavigationActivity : AppCompatActivity() {
@@ -12,6 +13,5 @@ class NavigationToNavigationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNavigationToNavigationBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
     }
 }
