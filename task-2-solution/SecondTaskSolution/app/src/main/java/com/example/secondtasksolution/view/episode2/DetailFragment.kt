@@ -26,7 +26,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                getFragment(context as AppCompatActivity)
+                ListFragment().getFragment(context as AppCompatActivity)
             }
         }
 

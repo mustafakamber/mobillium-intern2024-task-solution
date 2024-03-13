@@ -1,5 +1,4 @@
 <resources>
-    
     <string name="app_name">SecondTaskSolution</string>
     <string name="cityNameText">Istanbul</string>
     <string name="todayText">Today</string>
@@ -18,5 +17,4 @@
     <string name="activityToActivityText">From Activity To Activity</string>
     <string name="fragmentToFragmentText">From Fragment To Fragment</string>
     <string name="navFragmentToNavFragmentText">From NavFragment To NavFragment</string>
-    
 </resources>

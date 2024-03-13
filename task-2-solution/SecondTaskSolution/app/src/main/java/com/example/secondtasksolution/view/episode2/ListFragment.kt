@@ -51,7 +51,7 @@ class ListFragment : Fragment(R.layout.fragment_list) {
                 city.cityTemperature?.let { putInt(CITY_TEMPERATURE, it) }
             }
 
-           getFragment(context as AppCompatActivity,bundle)
+           DetailFragment().getFragment(context as AppCompatActivity,bundle)
 
         }
 
