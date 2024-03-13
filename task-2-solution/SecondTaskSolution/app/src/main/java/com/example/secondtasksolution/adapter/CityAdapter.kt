@@ -24,18 +24,19 @@ class CityAdapter(val cityList: MutableList<City>, val onItemSelected: (City) ->
     }
 
     override fun getItemCount(): Int {
-
         return cityList.size
     }
 
     override fun onBindViewHolder(holder: ListHolder, position: Int) = with(holder.binding) {
 
-        listRowCityText.text = cityList[position].cityName
-        listRowWeatherImage.setImageResource(cityList[position].cityWeatherImage!!.toInt())
-        listRowWeatherText.text = cityList[position].cityWeatherName
-        listRowTemperatureText.text = cityList[position].cityTemperature.toString()
-        listRowTemperatureRangeText.text =
-            cityList[position].cityTemperatureMin.toString() + "° - " + cityList[position].cityTemperatureMax.toString() + "°"
+        cityList[position].run {
+            listRowCityText.text = cityName
+            listRowWeatherImage.setImageResource(cityWeatherImage)
+            listRowWeatherText.text = cityWeatherName
+            listRowTemperatureText.text = cityTemperature.toString()
+            listRowTemperatureRangeText.text =
+                cityTemperatureMin.toString() + "° - " + cityTemperatureMax.toString() + "°"
+        }
 
         holder.itemView.setOnClickListener {
             onItemSelected(cityList[position])
