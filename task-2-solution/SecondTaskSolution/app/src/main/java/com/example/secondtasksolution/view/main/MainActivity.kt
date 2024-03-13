@@ -22,17 +22,16 @@ class MainActivity : AppCompatActivity() {
         with(binding){
 
             activityToActivityButton.setOnClickListener {
-                this@MainActivity.getActivity(ListActivity())
+                getActivity(ListActivity())
             }
 
             fragmentToFragmentButton.setOnClickListener {
-                this@MainActivity.getActivity(FragmentToFragmentActivity())
+                getActivity(FragmentToFragmentActivity())
             }
 
             navFragmentToNavFragmentButton.setOnClickListener {
-                this@MainActivity.getActivity(NavigationToNavigationActivity())
+                getActivity(NavigationToNavigationActivity())
             }
-
         }
     }
 

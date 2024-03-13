@@ -28,7 +28,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                ListFragment().getFragment(context as AppCompatActivity)
+                getFragment(context as AppCompatActivity)
             }
         }
 
@@ -49,9 +49,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
                 detailFragmentWeatherText.text = cityWeatherName
                 detailFragmentTemperatureText.text =  cityTemperature.toString()
             }
-
         }
-
     }
 
     override fun onDestroyView() {

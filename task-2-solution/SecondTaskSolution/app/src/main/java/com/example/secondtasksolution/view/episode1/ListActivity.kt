@@ -33,17 +33,15 @@ class ListActivity : AppCompatActivity() {
             }
         }
 
-        this@ListActivity.onBackPressedDispatcher.addCallback(callback)
+        onBackPressedDispatcher.addCallback(callback)
 
-        binding.listActivityRecyclerView.layoutManager = LinearLayoutManager(this@ListActivity)
+        binding.listActivityRecyclerView.layoutManager = LinearLayoutManager(this)
 
         val dataSource = CityDataSource()
-        val cities = dataSource.getCities(this@ListActivity)
+        val cities = dataSource.getCities(this)
 
         listAdapter = CityAdapter(cities) { city ->
-
-            this@ListActivity.getActivity(DetailActivity(),city)
-
+            getActivity(DetailActivity(),city)
         }
 
         binding.listActivityRecyclerView.adapter = listAdapter

@@ -23,21 +23,9 @@ class FragmentToFragmentActivity : AppCompatActivity() {
             }
         }
 
-        this@FragmentToFragmentActivity.onBackPressedDispatcher.addCallback(callback)
+        onBackPressedDispatcher.addCallback(callback)
 
         ListFragment().getFragment(this)
-
     }
 
-    /*
-    private fun replaceFragment() {
-
-        val fragment = DetailFragment()
-        val fragmentManager = supportFragmentManager
-        fragmentManager.beginTransaction().apply {
-            replace(R.id.fragmentToFragment, fragment)
-            commit()
-        }
-    }
-     */
 }
