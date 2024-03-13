@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
             navFragmentToNavFragmentButton.setOnClickListener {
                 getActivity(NavigationToNavigationActivity())
             }
-
         }
     }
 
