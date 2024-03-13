@@ -1,13 +1,10 @@
 package com.example.secondtasksolution.view.episode1
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.secondtasksolution.databinding.ActivityDetailBinding
 import com.example.secondtasksolution.util.Constant.CITY_NAME
 import com.example.secondtasksolution.util.Constant.CITY_TEMPERATURE
-import com.example.secondtasksolution.util.Constant.CITY_TEMPERATURE_MAX
-import com.example.secondtasksolution.util.Constant.CITY_TEMPERATURE_MIN
 import com.example.secondtasksolution.util.Constant.CITY_WEATHER_IMAGE
 import com.example.secondtasksolution.util.Constant.CITY_WEATHER_NAME
 

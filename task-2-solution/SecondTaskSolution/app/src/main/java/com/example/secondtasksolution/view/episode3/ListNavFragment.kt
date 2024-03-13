@@ -1,5 +1,6 @@
 package com.example.secondtasksolution.view.episode3
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -48,7 +49,13 @@ class ListNavFragment : Fragment(R.layout.fragment_list_nav) {
         binding.listNavFragmentRecyclerView.adapter = listAdapter
 
         setFragmentResultListener(REQUEST_KEY) { _, bundle ->
-            val updatedWeather = bundle.getParcelable<City>(UPDATED_CITY)
+
+            val updatedWeather = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                bundle.getParcelable(UPDATED_CITY,City::class.java)
+            } else {
+                bundle.getParcelable(UPDATED_CITY)
+            }
+
             val cityId = bundle.getInt(CITY_ID)
             updatedWeather?.let {
                 val index = cities.indexOfFirst { city -> city.cityId == cityId }

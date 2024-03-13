@@ -1,10 +1,7 @@
 package com.example.secondtasksolution.view.main
 
-import android.app.Activity
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.secondtasksolution.R
 import com.example.secondtasksolution.databinding.ActivityMainBinding
 import com.example.secondtasksolution.util.Extension.getActivity
 import com.example.secondtasksolution.view.episode1.ListActivity

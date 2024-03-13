@@ -2,7 +2,6 @@ package com.example.secondtasksolution.view.episode3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.OnBackPressedCallback
 import com.example.secondtasksolution.databinding.ActivityNavigationToNavigationBinding
 
 class NavigationToNavigationActivity : AppCompatActivity() {

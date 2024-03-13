@@ -2,16 +2,13 @@ package com.example.secondtasksolution.view.episode2
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.secondtasksolution.R
 import com.example.secondtasksolution.adapter.CityAdapter
 import com.example.secondtasksolution.databinding.FragmentListBinding
-import com.example.secondtasksolution.model.City
 import com.example.secondtasksolution.util.CityDataSource
 import com.example.secondtasksolution.util.Constant.CITY_NAME
 import com.example.secondtasksolution.util.Constant.CITY_TEMPERATURE

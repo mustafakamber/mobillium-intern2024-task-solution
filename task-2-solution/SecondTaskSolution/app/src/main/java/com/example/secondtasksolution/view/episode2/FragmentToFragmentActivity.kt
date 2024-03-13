@@ -3,8 +3,6 @@ package com.example.secondtasksolution.view.episode2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
-import androidx.fragment.app.Fragment
-import com.example.secondtasksolution.R
 import com.example.secondtasksolution.databinding.ActivityFragmentToFragmentBinding
 import com.example.secondtasksolution.util.Extension.getFragment
 

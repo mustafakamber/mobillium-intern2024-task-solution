@@ -2,9 +2,7 @@ package com.example.secondtasksolution.view.episode3
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
@@ -14,7 +12,6 @@ import com.example.secondtasksolution.databinding.FragmentDetailNavBinding
 import com.example.secondtasksolution.util.Constant.CITY_ID
 import com.example.secondtasksolution.util.Constant.REQUEST_KEY
 import com.example.secondtasksolution.util.Constant.UPDATED_CITY
-import java.util.*
 
 class DetailNavFragment : Fragment(R.layout.fragment_detail_nav) {
 
