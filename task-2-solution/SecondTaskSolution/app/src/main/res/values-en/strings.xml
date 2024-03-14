@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">SecondTaskSolution</string>
+    <string name="cityNameText">Istanbul</string>
+    <string name="todayText">Today</string>
+    <string name="todayDateText">01 April 2023</string>
+    <string name="temperatureText">26</string>
+    <string name="degreeMarkText">°</string>
+    <string name="weatherNameText">Sunny</string>
+    <string name="windText">Wind</string>
+    <string name="windSpeedText">3 km/s</string>
+    <string name="updateDataText">Update Data</string>
+    <string name="nextDayGroupFirstDateText">Tue, 02 April</string>
+    <string name="nextDayGroupSecondDateText">Wed, 03 April</string>
+    <string name="nextDayGroupThirdDateText">Thu, 04 April</string>
+    <string name="nextDayGroupFourthDateText">Fri, 05 April</string>
+    <string name="nextDayGroupTemperatureRangesText">14° - 27°</string>
+    <string name="activityToActivityText">From Activity To Activity</string>
+    <string name="fragmentToFragmentText">From Fragment To Fragment</string>
+    <string name="navFragmentToNavFragmentText">From NavFragment To NavFragment</string>
+</resources>

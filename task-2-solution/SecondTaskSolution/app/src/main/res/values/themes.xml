@@ -1,0 +1,121 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.SecondTaskSolution" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Text color. -->
+        <item name="android:textColorPrimary">@color/dark</item>
+        <item name="android:textColorSecondary">@color/light</item>
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/dark</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/dark</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/light</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Surface color. -->
+        <item name="colorSurface">@color/light</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/light</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Navigation bar color. -->
+        <item name="android:navigationBarColor">@color/light</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="smallRegularLightText">
+        <item name="android:textSize">@dimen/smallTextSize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="smallRegularDarkText">
+        <item name="android:textSize">@dimen/smallTextSize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="smallMediumLightText">
+        <item name="android:textSize">@dimen/smallTextSize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="smallBoldDarkText">
+        <item name="android:textSize">@dimen/smallTextSize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="normalRegularDarkText">
+        <item name="android:textSize">@dimen/mediumTextSize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="normalMediumLightText">
+        <item name="android:textSize">@dimen/mediumTextSize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="normalMediumDarkText">
+        <item name="android:textSize">@dimen/mediumTextSize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="normalBoldDarkText">
+        <item name="android:textSize">@dimen/mediumTextSize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="largeMediumLightText">
+        <item name="android:textSize">@dimen/largeTextSize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="hugeBoldLightText">
+        <item name="android:textSize">@dimen/hugeTextSize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="hugeBoldDarkText">
+        <item name="android:textSize">@dimen/hugeTextSize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="smallImage">
+        <item name="android:tint">?attr/colorPrimary</item>
+        <item name="android:layout_width">@dimen/smallImageSize</item>
+        <item name="android:layout_height">@dimen/smallImageSize</item>
+    </style>
+
+    <style name="mediumImage">
+        <item name="android:tint">?attr/colorPrimary</item>
+        <item name="android:layout_width">@dimen/mediumImageSize</item>
+        <item name="android:layout_height">@dimen/mediumImageSize</item>
+    </style>
+
+    <style name="largeImage">
+        <item name="android:tint">?attr/colorPrimary</item>
+        <item name="android:layout_width">@dimen/largeImageSize</item>
+        <item name="android:layout_height">@dimen/largeImageSize</item>
+    </style>
+
+</resources>
