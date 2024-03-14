@@ -17,7 +17,6 @@ import com.example.secondtasksolution.util.Constant.CITY_ID
 import com.example.secondtasksolution.util.Constant.REQUEST_KEY
 import com.example.secondtasksolution.util.Constant.UPDATED_CITY
 
-
 class ListNavFragment : Fragment(R.layout.fragment_list_nav) {
 
     private var fragmentListNavBinding: FragmentListNavBinding? = null

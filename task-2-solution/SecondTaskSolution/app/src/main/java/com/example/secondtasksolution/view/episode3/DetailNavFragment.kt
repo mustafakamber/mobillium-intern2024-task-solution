@@ -15,11 +15,11 @@ import com.example.secondtasksolution.util.Constant.UPDATED_CITY
 
 class DetailNavFragment : Fragment(R.layout.fragment_detail_nav) {
 
-    private var fragmentDetailNavBinding : FragmentDetailNavBinding? = null
+    private var fragmentDetailNavBinding: FragmentDetailNavBinding? = null
     private var currentTemperature = 0
     private val args by navArgs<DetailNavFragmentArgs>()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?){
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val binding = FragmentDetailNavBinding.bind(view)
@@ -33,22 +33,20 @@ class DetailNavFragment : Fragment(R.layout.fragment_detail_nav) {
 
         requireActivity().onBackPressedDispatcher.addCallback(callback)
 
-        with(binding){
+        with(binding) {
 
             args.currentCity.run {
-
                 detailNavFragmentCityText.text = cityName
                 detailNavFragmentWeatherImage.setImageResource(cityWeatherImage)
-                detailNavFragmentWeatherText.text =  cityWeatherName
+                detailNavFragmentWeatherText.text = cityWeatherName
                 currentTemperature = cityTemperature
                 detailNavFragmentTemperatureText.text = currentTemperature.toString()
             }
 
             detailNavFragmentRefreshImage.setOnClickListener {
-
-                val randomTemperature = (args.currentCity.cityTemperatureMin..args.currentCity.cityTemperatureMax).random()
+                val randomTemperature =
+                    (args.currentCity.cityTemperatureMin..args.currentCity.cityTemperatureMax).random()
                 currentTemperature = randomTemperature
-
                 detailNavFragmentTemperatureText.text = currentTemperature.toString()
             }
 
@@ -70,7 +68,7 @@ class DetailNavFragment : Fragment(R.layout.fragment_detail_nav) {
         fragmentDetailNavBinding = null
     }
 
-    private fun backToListNavFragment(){
+    private fun backToListNavFragment() {
         findNavController().popBackStack()
     }
 

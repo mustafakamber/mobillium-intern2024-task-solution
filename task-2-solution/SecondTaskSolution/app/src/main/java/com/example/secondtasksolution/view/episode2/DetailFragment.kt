@@ -13,7 +13,6 @@ import com.example.secondtasksolution.util.Constant.CITY_WEATHER_IMAGE
 import com.example.secondtasksolution.util.Constant.CITY_WEATHER_NAME
 import com.example.secondtasksolution.util.Extension.getFragment
 
-
 class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private var fragmentDetailBinding : FragmentDetailBinding? = null
