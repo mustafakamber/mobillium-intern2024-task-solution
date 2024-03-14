@@ -9,12 +9,12 @@
 - [Fragment Oluşturma](https://developer.android.com/guide/fragments/create?hl=tr)
 
 - [Navigation Component](https://developer.android.com/guide/navigation?hl=tr)
-
-- [Çoklu Dil Seçeneği Oluşturma](https://www.youtube.com/watch?v=ehM1JjCs9PM&list=LL&index=2&t=164s)
-
+  
 - [Fragment Result API 1](https://developer.android.com/guide/fragments/communicate?hl=tr#fragment-result)
 
 - [Data Class & Fragment Result API 2](https://www.youtube.com/watch?v=ZeObswGqy-A&list=LL&index=6&t=24s)
+
+- [Çoklu Dil Seçeneği Oluşturma](https://www.youtube.com/watch?v=ehM1JjCs9PM&list=LL&index=2&t=164s)
 
 <h3 align="left">Ekran Görüntüsü</h3>
 
