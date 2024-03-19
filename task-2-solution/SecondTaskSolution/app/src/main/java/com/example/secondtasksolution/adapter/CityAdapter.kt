@@ -31,11 +31,11 @@ class CityAdapter(val cityList: MutableList<City>, val onItemSelected: (City) ->
 
         cityList[position].run {
             listRowCityText.text = cityName
-            listRowWeatherImage.setImageResource(cityWeatherImage)
-            listRowWeatherText.text = cityWeatherName
-            listRowTemperatureText.text = cityTemperature.toString()
+            listRowWeatherImage.setImageResource(weatherImage)
+            listRowWeatherText.text = weatherName
+            listRowTemperatureText.text = temperature.toString()
             listRowTemperatureRangeText.text =
-                cityTemperatureMin.toString() + "° - " + cityTemperatureMax.toString() + "°"
+                temperatureMin.toString() + "° - " + temperatureMax.toString() + "°"
         }
 
         holder.itemView.setOnClickListener {

@@ -2,12 +2,13 @@ package com.example.secondtasksolution.view.episode1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.secondtasksolution.adapter.CityAdapter
 import com.example.secondtasksolution.databinding.ActivityListBinding
+import com.example.secondtasksolution.model.City
+import com.example.secondtasksolution.util.ActivityController.navigateToActivityWithExt
+import com.example.secondtasksolution.util.CallBackHandler
 import com.example.secondtasksolution.util.CityDataSource
-import com.example.secondtasksolution.util.Extension.getActivity
 
 class ListActivity : AppCompatActivity() {
 
@@ -19,23 +20,34 @@ class ListActivity : AppCompatActivity() {
         binding = ActivityListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val callback = object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                finish()
-            }
+        CallBackHandler.handleCallback(this) {
+            navigateToMainScreen()
         }
 
-        onBackPressedDispatcher.addCallback(callback)
+        val data = readDataFromSource()
 
+        showDataInAdapter(data)
+    }
+
+    private fun readDataFromSource(): MutableList<City> {
+        val cities = CityDataSource().getCities(this)
+        return cities
+    }
+
+    private fun showDataInAdapter(cities: MutableList<City>) {
         binding.listActivityRecyclerView.layoutManager = LinearLayoutManager(this)
-
-        val dataSource = CityDataSource()
-        val cities = dataSource.getCities(this)
-
         listAdapter = CityAdapter(cities) { city ->
-            getActivity(DetailActivity(),city)
+            navigateToDetailScreen(city)
         }
-
         binding.listActivityRecyclerView.adapter = listAdapter
     }
+
+    private fun navigateToDetailScreen(city: City) {
+        navigateToActivityWithExt(DetailActivity(), city)
+    }
+
+    private fun navigateToMainScreen(){
+        finish()
+    }
+
 }

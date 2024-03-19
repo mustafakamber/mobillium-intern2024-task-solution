@@ -3,7 +3,7 @@ package com.example.secondtasksolution.view.main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.secondtasksolution.databinding.ActivityMainBinding
-import com.example.secondtasksolution.util.Extension.getActivity
+import com.example.secondtasksolution.util.ActivityController.navigateToActivityWithExt
 import com.example.secondtasksolution.view.episode1.ListActivity
 import com.example.secondtasksolution.view.episode2.FragmentToFragmentActivity
 import com.example.secondtasksolution.view.episode3.NavigationToNavigationActivity
@@ -19,15 +19,15 @@ class MainActivity : AppCompatActivity() {
         with(binding){
 
             activityToActivityButton.setOnClickListener {
-                getActivity(ListActivity())
+                navigateToActivityWithExt(ListActivity())
             }
 
             fragmentToFragmentButton.setOnClickListener {
-                getActivity(FragmentToFragmentActivity())
+                navigateToActivityWithExt(FragmentToFragmentActivity())
             }
 
             navFragmentToNavFragmentButton.setOnClickListener {
-                getActivity(NavigationToNavigationActivity())
+                navigateToActivityWithExt(NavigationToNavigationActivity())
             }
         }
     }

@@ -2,9 +2,10 @@ package com.example.secondtasksolution.view.episode3
 
 import android.os.Build
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
-import androidx.activity.OnBackPressedCallback
+import android.view.ViewGroup
 import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +13,7 @@ import com.example.secondtasksolution.R
 import com.example.secondtasksolution.adapter.CityAdapter
 import com.example.secondtasksolution.databinding.FragmentListNavBinding
 import com.example.secondtasksolution.model.City
+import com.example.secondtasksolution.util.CallBackHandler
 import com.example.secondtasksolution.util.CityDataSource
 import com.example.secondtasksolution.util.Constant.CITY_ID
 import com.example.secondtasksolution.util.Constant.REQUEST_KEY
@@ -22,42 +24,54 @@ class ListNavFragment : Fragment(R.layout.fragment_list_nav) {
     private var fragmentListNavBinding: FragmentListNavBinding? = null
     private var listAdapter = CityAdapter(mutableListOf()) {}
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val binding = FragmentListNavBinding.inflate(inflater, container, false)
+        fragmentListNavBinding = binding
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val binding = FragmentListNavBinding.bind(view)
-        fragmentListNavBinding = binding
-
-        val callback = object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                requireActivity().finish()
-            }
+        CallBackHandler.handleCallback(requireActivity()) {
+            backToMainScreen()
         }
 
-        requireActivity().onBackPressedDispatcher.addCallback(callback)
+        val data = getDataFromSource()
 
-        binding.listNavFragmentRecyclerView.layoutManager = LinearLayoutManager(context)
+        showDataInAdapter(data)
 
-        val dataSource = CityDataSource()
-        val cities = dataSource.getCities(requireContext())
+        fragmentResultListener(data)
+    }
 
+    private fun getDataFromSource(): MutableList<City> {
+        val cities = CityDataSource().getCities(requireContext())
+        return cities
+    }
+
+    private fun showDataInAdapter(cities: MutableList<City>) {
+        fragmentListNavBinding!!.listNavFragmentRecyclerView.layoutManager =
+            LinearLayoutManager(context)
         listAdapter = CityAdapter(cities) { city ->
-            goToDetailFragment(city)
+            navigateToDetailScreen(city)
         }
+        fragmentListNavBinding!!.listNavFragmentRecyclerView.adapter = listAdapter
+    }
 
-        binding.listNavFragmentRecyclerView.adapter = listAdapter
-
+    private fun fragmentResultListener(cities: MutableList<City>) {
         setFragmentResultListener(REQUEST_KEY) { _, bundle ->
-
             val updatedWeather = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                bundle.getParcelable(UPDATED_CITY,City::class.java)
+                bundle.getParcelable(UPDATED_CITY, City::class.java)
             } else {
                 bundle.getParcelable(UPDATED_CITY)
             }
-
             val cityId = bundle.getInt(CITY_ID)
             updatedWeather?.let {
-                val index = cities.indexOfFirst { city -> city.cityId == cityId }
+                val index = cities.indexOfFirst { city -> city.id == cityId }
                 if (index != -1) {
                     cities[index] = it
                     listAdapter.notifyItemChanged(index)
@@ -66,12 +80,16 @@ class ListNavFragment : Fragment(R.layout.fragment_list_nav) {
         }
     }
 
+    private fun backToMainScreen() {
+        requireActivity().finish()
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         fragmentListNavBinding = null
     }
 
-    private fun goToDetailFragment(city: City) {
+    private fun navigateToDetailScreen(city: City) {
         findNavController()
             .navigate(ListNavFragmentDirections.actionListNavFragmentToDetailNavFragment(city))
     }

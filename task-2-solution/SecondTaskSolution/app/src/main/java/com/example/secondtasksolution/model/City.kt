@@ -5,11 +5,11 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class City(
-    val cityId: Int,
-    val cityName : String,
-    val cityWeatherName : String,
-    val cityWeatherImage : Int,
-    var cityTemperature : Int,
-    val cityTemperatureMin : Int,
-    val cityTemperatureMax : Int
+    val id: Int,
+    val cityName: String,
+    val weatherName: String,
+    val weatherImage: Int,
+    var temperature: Int,
+    val temperatureMin: Int,
+    val temperatureMax: Int
 ) : Parcelable

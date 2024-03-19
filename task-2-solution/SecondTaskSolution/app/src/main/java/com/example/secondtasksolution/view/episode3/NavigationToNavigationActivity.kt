@@ -7,7 +7,6 @@ import com.example.secondtasksolution.databinding.ActivityNavigationToNavigation
 class NavigationToNavigationActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityNavigationToNavigationBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNavigationToNavigationBinding.inflate(layoutInflater)

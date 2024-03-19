@@ -2,9 +2,9 @@ package com.example.secondtasksolution.view.episode2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.OnBackPressedCallback
 import com.example.secondtasksolution.databinding.ActivityFragmentToFragmentBinding
-import com.example.secondtasksolution.util.Extension.getFragment
+import com.example.secondtasksolution.util.CallBackHandler
+import com.example.secondtasksolution.util.FragmentController.navigateToFragmentWithExt
 
 class FragmentToFragmentActivity : AppCompatActivity() {
 
@@ -15,15 +15,19 @@ class FragmentToFragmentActivity : AppCompatActivity() {
         binding = ActivityFragmentToFragmentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val callback = object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                finish()
-            }
+        CallBackHandler.handleCallback(this@FragmentToFragmentActivity) {
+            backToMainScreen()
         }
 
-        onBackPressedDispatcher.addCallback(callback)
+        navigateToListScreen()
+    }
 
-        ListFragment().getFragment(this)
+    private fun backToMainScreen(){
+        finish()
+    }
+
+    private fun navigateToListScreen(){
+        ListFragment().navigateToFragmentWithExt(this)
     }
 
 }

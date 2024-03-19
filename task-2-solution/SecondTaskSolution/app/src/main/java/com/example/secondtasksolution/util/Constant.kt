@@ -1,6 +1,6 @@
 package com.example.secondtasksolution.util
 
-object Constant{
+object Constant {
     const val CITY_ID = "cityId"
     const val CITY_NAME = "cityName"
     const val CITY_WEATHER_NAME = "cityWeatherName"
