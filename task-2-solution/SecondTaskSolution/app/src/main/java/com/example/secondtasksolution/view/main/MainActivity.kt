@@ -11,6 +11,7 @@ import com.example.secondtasksolution.view.episode3.NavigationToNavigationActivi
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
