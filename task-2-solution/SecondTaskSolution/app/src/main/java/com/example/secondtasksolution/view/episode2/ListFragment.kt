@@ -69,7 +69,8 @@ class ListFragment : Fragment(R.layout.fragment_list) {
             putInt(CITY_WEATHER_IMAGE, city.weatherImage)
             putInt(CITY_TEMPERATURE, city.temperature)
         }
-        DetailFragment().navigateToFragmentWithExt(context as AppCompatActivity, bundle)
+        val detailFragment = DetailFragment()
+        detailFragment.navigateToFragmentWithExt(context as AppCompatActivity, bundle)
     }
 
     private fun navigateToMainScreen() {

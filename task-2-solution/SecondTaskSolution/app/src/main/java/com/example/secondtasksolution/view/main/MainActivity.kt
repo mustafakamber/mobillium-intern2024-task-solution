@@ -17,15 +17,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         with(binding){
-
             activityToActivityButton.setOnClickListener {
                 navigateToActivityWithExt(ListActivity())
             }
-
             fragmentToFragmentButton.setOnClickListener {
                 navigateToActivityWithExt(FragmentToFragmentActivity())
             }
-
             navFragmentToNavFragmentButton.setOnClickListener {
                 navigateToActivityWithExt(NavigationToNavigationActivity())
             }

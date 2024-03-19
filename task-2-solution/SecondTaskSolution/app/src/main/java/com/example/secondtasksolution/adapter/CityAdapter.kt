@@ -37,7 +37,6 @@ class CityAdapter(val cityList: MutableList<City>, val onItemSelected: (City) ->
             listRowTemperatureRangeText.text =
                 temperatureMin.toString() + "° - " + temperatureMax.toString() + "°"
         }
-
         holder.itemView.setOnClickListener {
             onItemSelected(cityList[position])
         }

@@ -90,8 +90,10 @@ class ListNavFragment : Fragment(R.layout.fragment_list_nav) {
     }
 
     private fun navigateToDetailScreen(city: City) {
+        val actionToDetailScreen =
+            ListNavFragmentDirections.actionListNavFragmentToDetailNavFragment(city)
         findNavController()
-            .navigate(ListNavFragmentDirections.actionListNavFragmentToDetailNavFragment(city))
+            .navigate(actionToDetailScreen)
     }
 
 }

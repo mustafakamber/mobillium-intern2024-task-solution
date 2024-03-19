@@ -52,13 +52,13 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
             val cityWeatherName = getString(CITY_WEATHER_NAME)
             val cityWeatherImage = getInt(CITY_WEATHER_IMAGE,0)
             val cityTemperature = getInt(CITY_TEMPERATURE,0)
-
             dataReady.invoke(cityName!!,cityWeatherName!!,cityWeatherImage,cityTemperature)
         }
     }
 
     private fun backToListScreen(){
-        ListFragment().navigateToFragmentWithExt(context as AppCompatActivity)
+        val listFragment = ListFragment()
+        listFragment.navigateToFragmentWithExt(context as AppCompatActivity)
     }
 
     override fun onDestroyView() {
