@@ -6,41 +6,43 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.secondtasksolution.R
 import com.example.secondtasksolution.adapter.CityAdapter
 import com.example.secondtasksolution.databinding.FragmentListBinding
 import com.example.secondtasksolution.model.City
-import com.example.secondtasksolution.util.CallBackHandler
+import com.example.secondtasksolution.util.CallBackHandler.onBackPressed
 import com.example.secondtasksolution.util.CityDataSource
-import com.example.secondtasksolution.util.Constant.CITY_NAME
-import com.example.secondtasksolution.util.Constant.CITY_TEMPERATURE
-import com.example.secondtasksolution.util.Constant.CITY_WEATHER_IMAGE
-import com.example.secondtasksolution.util.Constant.CITY_WEATHER_NAME
+import com.example.secondtasksolution.util.Constant.CITY_DATA
 import com.example.secondtasksolution.util.FragmentController.navigateToFragmentWithExt
-
 
 class ListFragment : Fragment(R.layout.fragment_list) {
 
-    private var fragmentListBinding: FragmentListBinding? = null
+    private lateinit var fragmentListBinding: FragmentListBinding
     private var listAdapter = CityAdapter(mutableListOf()) {}
+
+    companion object {
+        fun newInstance(): ListFragment {
+            return ListFragment()
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentListBinding.inflate(inflater, container, false)
         fragmentListBinding = binding
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         super.onViewCreated(view, savedInstanceState)
 
-        CallBackHandler.handleCallback(requireActivity()) {
-            navigateToMainScreen()
+        requireActivity().onBackPressed {
+            backToMainScreen()
         }
 
         val data = readDataFromSource()
@@ -54,32 +56,21 @@ class ListFragment : Fragment(R.layout.fragment_list) {
     }
 
     private fun showDataInAdapter(cities: MutableList<City>) {
-        fragmentListBinding!!.listFragmentRecyclerView.layoutManager =
-            LinearLayoutManager(context)
         listAdapter = CityAdapter(cities) { city ->
             navigateToDetailScreen(city)
         }
-        fragmentListBinding!!.listFragmentRecyclerView.adapter = listAdapter
+        fragmentListBinding.listFragmentRecyclerView.adapter = listAdapter
     }
 
     private fun navigateToDetailScreen(city: City) {
         val bundle = Bundle().apply {
-            putString(CITY_NAME, city.cityName)
-            putString(CITY_WEATHER_NAME, city.weatherName)
-            putInt(CITY_WEATHER_IMAGE, city.weatherImage)
-            putInt(CITY_TEMPERATURE, city.temperature)
+            putParcelable(CITY_DATA, city)
         }
-        val detailFragment = DetailFragment()
-        detailFragment.navigateToFragmentWithExt(context as AppCompatActivity, bundle)
+        DetailFragment.newInstance(bundle)
+            .navigateToFragmentWithExt(requireActivity() as AppCompatActivity)
     }
 
-    private fun navigateToMainScreen() {
+    private fun backToMainScreen() {
         requireActivity().finish()
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        fragmentListBinding = null
-    }
-
 }

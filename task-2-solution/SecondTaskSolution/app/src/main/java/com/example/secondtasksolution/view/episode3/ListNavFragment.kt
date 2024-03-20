@@ -8,12 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.secondtasksolution.R
 import com.example.secondtasksolution.adapter.CityAdapter
 import com.example.secondtasksolution.databinding.FragmentListNavBinding
 import com.example.secondtasksolution.model.City
-import com.example.secondtasksolution.util.CallBackHandler
+import com.example.secondtasksolution.util.CallBackHandler.onBackPressed
 import com.example.secondtasksolution.util.CityDataSource
 import com.example.secondtasksolution.util.Constant.CITY_ID
 import com.example.secondtasksolution.util.Constant.REQUEST_KEY
@@ -21,14 +20,14 @@ import com.example.secondtasksolution.util.Constant.UPDATED_CITY
 
 class ListNavFragment : Fragment(R.layout.fragment_list_nav) {
 
-    private var fragmentListNavBinding: FragmentListNavBinding? = null
+    private lateinit var fragmentListNavBinding: FragmentListNavBinding
     private var listAdapter = CityAdapter(mutableListOf()) {}
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentListNavBinding.inflate(inflater, container, false)
         fragmentListNavBinding = binding
         return binding.root
@@ -37,7 +36,7 @@ class ListNavFragment : Fragment(R.layout.fragment_list_nav) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        CallBackHandler.handleCallback(requireActivity()) {
+        requireActivity().onBackPressed {
             backToMainScreen()
         }
 
@@ -54,12 +53,10 @@ class ListNavFragment : Fragment(R.layout.fragment_list_nav) {
     }
 
     private fun showDataInAdapter(cities: MutableList<City>) {
-        fragmentListNavBinding!!.listNavFragmentRecyclerView.layoutManager =
-            LinearLayoutManager(context)
         listAdapter = CityAdapter(cities) { city ->
             navigateToDetailScreen(city)
         }
-        fragmentListNavBinding!!.listNavFragmentRecyclerView.adapter = listAdapter
+        fragmentListNavBinding.listNavFragmentRecyclerView.adapter = listAdapter
     }
 
     private fun fragmentResultListener(cities: MutableList<City>) {
@@ -82,11 +79,6 @@ class ListNavFragment : Fragment(R.layout.fragment_list_nav) {
 
     private fun backToMainScreen() {
         requireActivity().finish()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        fragmentListNavBinding = null
     }
 
     private fun navigateToDetailScreen(city: City) {

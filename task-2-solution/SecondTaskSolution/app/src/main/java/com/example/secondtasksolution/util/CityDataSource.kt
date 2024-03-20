@@ -5,6 +5,7 @@ import com.example.secondtasksolution.R
 import com.example.secondtasksolution.model.City
 
 class CityDataSource {
+
     fun getCities(context: Context): MutableList<City> {
         return mutableListOf(
             City(

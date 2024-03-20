@@ -1,12 +1,11 @@
 package com.example.secondtasksolution.view.episode1
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.secondtasksolution.databinding.ActivityDetailBinding
-import com.example.secondtasksolution.util.Constant.CITY_NAME
-import com.example.secondtasksolution.util.Constant.CITY_TEMPERATURE
-import com.example.secondtasksolution.util.Constant.CITY_WEATHER_IMAGE
-import com.example.secondtasksolution.util.Constant.CITY_WEATHER_NAME
+import com.example.secondtasksolution.model.City
+import com.example.secondtasksolution.util.Constant.CITY_DATA
 
 class DetailActivity : AppCompatActivity() {
 
@@ -17,25 +16,21 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        getDataWithIntent { cityName, weatherName, weatherImage, temperature ->
-
-            with(binding) {
-                detailActivityCityText.text = cityName
-                detailActivityWeatherImage.setImageResource(weatherImage)
-                detailActivityWeatherText.text = weatherName
-                detailActivityTemperatureText.text = temperature.toString()
-            }
-        }
+        updateDetailViewCityDataWithIntent()
     }
 
-    private fun getDataWithIntent(dataReady: (String, String, Int, Int) -> Unit) {
-        intent.apply {
-            val cityName = getStringExtra(CITY_NAME)
-            val cityWeatherName = getStringExtra(CITY_WEATHER_NAME)
-            val cityWeatherImage = getIntExtra(CITY_WEATHER_IMAGE, 0)
-            val cityTemperature = getIntExtra(CITY_TEMPERATURE, 0)
+    private fun updateDetailViewCityDataWithIntent() = with(binding) {
 
-            dataReady.invoke(cityName!!, cityWeatherName!!, cityWeatherImage, cityTemperature)
+        val city = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getParcelableExtra(CITY_DATA,City::class.java)
+        } else {
+            intent.getParcelableExtra(CITY_DATA)
+        }
+        city?.let {
+            detailActivityCityText.text = city.cityName
+            detailActivityWeatherImage.setImageResource(city.weatherImage)
+            detailActivityWeatherText.text = city.weatherName
+            detailActivityTemperatureText.text = city.temperature.toString()
         }
     }
 }

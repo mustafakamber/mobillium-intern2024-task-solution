@@ -2,12 +2,11 @@ package com.example.secondtasksolution.view.episode1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.secondtasksolution.adapter.CityAdapter
 import com.example.secondtasksolution.databinding.ActivityListBinding
 import com.example.secondtasksolution.model.City
 import com.example.secondtasksolution.util.ActivityController.navigateToActivityWithExt
-import com.example.secondtasksolution.util.CallBackHandler
+import com.example.secondtasksolution.util.CallBackHandler.onBackPressed
 import com.example.secondtasksolution.util.CityDataSource
 
 class ListActivity : AppCompatActivity() {
@@ -20,8 +19,8 @@ class ListActivity : AppCompatActivity() {
         binding = ActivityListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        CallBackHandler.handleCallback(this) {
-            navigateToMainScreen()
+        onBackPressed {
+            backToMainScreen()
         }
 
         val data = readDataFromSource()
@@ -35,7 +34,6 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun showDataInAdapter(cities: MutableList<City>) {
-        binding.listActivityRecyclerView.layoutManager = LinearLayoutManager(this)
         listAdapter = CityAdapter(cities) { city ->
             navigateToDetailScreen(city)
         }
@@ -46,7 +44,7 @@ class ListActivity : AppCompatActivity() {
         navigateToActivityWithExt(DetailActivity(), city)
     }
 
-    private fun navigateToMainScreen(){
+    private fun backToMainScreen(){
         finish()
     }
 

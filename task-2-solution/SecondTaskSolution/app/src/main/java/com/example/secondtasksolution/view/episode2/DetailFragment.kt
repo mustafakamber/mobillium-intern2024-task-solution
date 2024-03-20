@@ -1,69 +1,71 @@
 package com.example.secondtasksolution.view.episode2
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.secondtasksolution.R
 import com.example.secondtasksolution.databinding.FragmentDetailBinding
-import com.example.secondtasksolution.util.CallBackHandler
-import com.example.secondtasksolution.util.Constant.CITY_NAME
-import com.example.secondtasksolution.util.Constant.CITY_TEMPERATURE
-import com.example.secondtasksolution.util.Constant.CITY_WEATHER_IMAGE
-import com.example.secondtasksolution.util.Constant.CITY_WEATHER_NAME
+import com.example.secondtasksolution.model.City
+import com.example.secondtasksolution.util.CallBackHandler.onBackPressed
+import com.example.secondtasksolution.util.Constant.CITY_DATA
 import com.example.secondtasksolution.util.FragmentController.navigateToFragmentWithExt
 
 class DetailFragment : Fragment(R.layout.fragment_detail) {
 
-    private var fragmentDetailBinding : FragmentDetailBinding? = null
+    private lateinit var fragmentDetailBinding: FragmentDetailBinding
+
+    companion object {
+        fun newInstance(bundle: Bundle): DetailFragment {
+            val fragment = DetailFragment()
+            fragment.arguments = bundle
+            return fragment
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentDetailBinding.inflate(inflater, container, false)
         fragmentDetailBinding = binding
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?){
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        CallBackHandler.handleCallback(requireActivity()) {
+        requireActivity().onBackPressed {
             backToListScreen()
         }
 
-        getDataWithArguments { cityName, weatherName, weatherImage, temperature ->
-            with(fragmentDetailBinding!!){
-                detailFragmentCityText.text = cityName
-                detailFragmentWeatherImage.setImageResource(weatherImage)
-                detailFragmentWeatherText.text = weatherName
-                detailFragmentTemperatureText.text =  temperature.toString()
+        updateDetailViewCityDataWithBundle()
+    }
+
+    private fun updateDetailViewCityDataWithBundle() = with(fragmentDetailBinding) {
+        arguments?.let {
+            val city = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                arguments?.getParcelable(CITY_DATA, City::class.java)
+            } else {
+                arguments?.getParcelable(CITY_DATA)
+            }
+            city?.let {
+                detailFragmentCityText.text = city.cityName
+                detailFragmentWeatherImage.setImageResource(city.weatherImage)
+                detailFragmentWeatherText.text = city.weatherName
+                detailFragmentTemperatureText.text = city.temperature.toString()
             }
         }
     }
 
-    private fun getDataWithArguments(dataReady : (String, String, Int, Int) -> Unit){
-        arguments?.apply {
-            val cityName = getString(CITY_NAME)
-            val cityWeatherName = getString(CITY_WEATHER_NAME)
-            val cityWeatherImage = getInt(CITY_WEATHER_IMAGE,0)
-            val cityTemperature = getInt(CITY_TEMPERATURE,0)
-            dataReady.invoke(cityName!!,cityWeatherName!!,cityWeatherImage,cityTemperature)
-        }
+    private fun backToListScreen() {
+        ListFragment.newInstance().navigateToFragmentWithExt(requireActivity() as AppCompatActivity)
     }
-
-    private fun backToListScreen(){
-        val listFragment = ListFragment()
-        listFragment.navigateToFragmentWithExt(context as AppCompatActivity)
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        fragmentDetailBinding = null
-    }
-
 }
+
