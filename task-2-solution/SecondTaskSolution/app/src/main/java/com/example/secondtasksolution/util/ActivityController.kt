@@ -11,7 +11,7 @@ object ActivityController {
         val intent = Intent(this, destinationActivity::class.java)
             .apply {
                 city?.let {
-                    putExtra(CITY_DATA,city)
+                    putExtra(CITY_DATA, city)
                 }
             }
         startActivity(intent)

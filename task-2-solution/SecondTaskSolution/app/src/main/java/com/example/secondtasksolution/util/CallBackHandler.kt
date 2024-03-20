@@ -10,7 +10,6 @@ object CallBackHandler {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 backButtonPressed()
-
             }
         }
         this.onBackPressedDispatcher.addCallback(callback)
