@@ -1,8 +1,8 @@
 package com.example.secondtasksolution.view.episode1
 
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.secondtasksolution.databinding.ActivityDetailBinding
 import com.example.secondtasksolution.model.City
 import com.example.secondtasksolution.util.Constant.CITY_DATA

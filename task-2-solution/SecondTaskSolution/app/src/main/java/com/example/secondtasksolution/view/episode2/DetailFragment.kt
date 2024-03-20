@@ -3,18 +3,15 @@ package com.example.secondtasksolution.view.episode2
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
-import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import com.example.secondtasksolution.R
 import com.example.secondtasksolution.databinding.FragmentDetailBinding
 import com.example.secondtasksolution.model.City
 import com.example.secondtasksolution.util.CallBackHandler.onBackPressed
 import com.example.secondtasksolution.util.Constant.CITY_DATA
-import com.example.secondtasksolution.util.FragmentController.navigateToFragmentWithExt
 
 class DetailFragment : Fragment(R.layout.fragment_detail) {
 
@@ -65,7 +62,8 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     }
 
     private fun backToListScreen() {
-        ListFragment.newInstance().navigateToFragmentWithExt(requireActivity() as AppCompatActivity)
+        val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+        fragmentManager.popBackStack()
     }
 }
 
