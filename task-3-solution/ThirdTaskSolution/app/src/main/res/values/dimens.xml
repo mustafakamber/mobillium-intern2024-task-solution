@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TextSize -->
+    <dimen name="medium_text_size">35sp</dimen>
+    <!-- VerticalSpacing -->
+    <dimen name="medium_vertical_spacing">32dp</dimen>
+    <!-- HorizontalSpacing -->
+    <dimen name="medium_horizontal_spacing">32dp</dimen>
+    <!-- ImageSize -->
+    <dimen name="medium_image_size">108dp</dimen>
+</resources>
