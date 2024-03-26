@@ -1,4 +1,4 @@
-package com.example.thirdtasksolution.view
+package com.example.thirdtasksolution.viewmodel
 
 
 import androidx.lifecycle.MutableLiveData

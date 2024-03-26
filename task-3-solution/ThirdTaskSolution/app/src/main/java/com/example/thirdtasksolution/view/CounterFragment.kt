@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.myapplication.databinding.FragmentCounterBinding
+import com.example.thirdtasksolution.util.CallBackHandler.navigateToPreviousFragment
+import com.example.thirdtasksolution.util.CallBackHandler.onBackPressed
+import com.example.thirdtasksolution.viewmodel.CounterViewModel
 
 class CounterFragment : Fragment() {
 
@@ -25,6 +28,10 @@ class CounterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        onBackPressed {
+            navigateToPreviousFragment()
+        }
 
         observeLiveData()
 

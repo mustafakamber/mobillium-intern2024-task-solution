@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">ThirdTaskSolution</string>
-    <string name="counter_default_number">0</string>
     <string name="counter_button_text">Increase Counter</string>
     <string name="counter_switch_text">Use ViewModel</string>
+    <string name="default_guess_char">S</string>
+    <string name="result_fail">TEKRAR DENE</string>
+    <string name="result_success">KAZANDIN!</string>
+    <string name="button_clear_text">Clear</string>
+    <string name="button_guess_text">Guess</string>
+    <string name="navigate_counter_button_text">Counter Application</string>
+    <string name="navigate_guess_button_text">Guess Application</string>
 </resources>

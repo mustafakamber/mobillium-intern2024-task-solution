@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="counter_default_number">0</integer>
+    <integer name="button_width_number">1</integer>
+    <integer name="button_one_text">1</integer>
+    <integer name="button_two_text">2</integer>
+    <integer name="button_three_text">3</integer>
+    <integer name="button_four_text">4</integer>
+    <integer name="button_five_text">5</integer>
+    <integer name="button_six_text">6</integer>
+    <integer name="button_seven_text">7</integer>
+    <integer name="button_eight_text">8</integer>
+    <integer name="button_nine_text">9</integer>
+    <integer name="button_zero_text">0</integer>
+</resources>

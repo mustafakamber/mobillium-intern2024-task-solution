@@ -1,0 +1,132 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.thirdtasksolution.view.GuessFragment">
+
+
+    <TextView
+        android:id="@+id/guessCharacterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="@dimen/medium_text_size"
+        app:layout_constraintBottom_toTopOf="@id/guessResultText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/default_guess_char" />
+
+    <TextView
+        android:id="@+id/guessResultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/small_text_size"
+        android:textAlignment="center"
+        android:layout_marginBottom="@dimen/small_vertical_spacing"
+        app:layout_constraintBottom_toTopOf="@id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@string/result_fail" />
+
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/small_vertical_spacing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/oneButton"
+                style="@style/GuessNumberButtonStyle"
+                android:text="@integer/button_one_text" />
+
+            <Button
+                android:id="@+id/twoButton"
+                style="@style/GuessNumberButtonStyle"
+                android:text="@integer/button_two_text" />
+
+            <Button
+                android:id="@+id/threeButton"
+                style="@style/GuessNumberButtonStyle"
+                android:text="@integer/button_three_text" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/fourButton"
+                style="@style/GuessNumberButtonStyle"
+                android:text="@integer/button_four_text" />
+
+            <Button
+                android:id="@+id/fiveButton"
+                style="@style/GuessNumberButtonStyle"
+                android:text="@integer/button_five_text" />
+
+            <Button
+                android:id="@+id/sixButton"
+                style="@style/GuessNumberButtonStyle"
+                android:text="@integer/button_six_text" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/sevenButton"
+                style="@style/GuessNumberButtonStyle"
+                android:text="@integer/button_seven_text" />
+
+            <Button
+                android:id="@+id/eightButton"
+                style="@style/GuessNumberButtonStyle"
+                android:text="@integer/button_eight_text" />
+
+            <Button
+                android:id="@+id/nineButton"
+                style="@style/GuessNumberButtonStyle"
+                android:text="@integer/button_nine_text" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/clearButton"
+                style="@style/GuessNumberButtonStyle"
+                android:text="@string/button_clear_text" />
+
+            <Button
+                android:id="@+id/zeroButton"
+                style="@style/GuessNumberButtonStyle"
+                android:text="@integer/button_zero_text" />
+
+            <Button
+                android:id="@+id/guessButton"
+                style="@style/GuessNumberButtonStyle"
+                android:text="@string/button_guess_text" />
+
+        </TableRow>
+
+    </TableLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
