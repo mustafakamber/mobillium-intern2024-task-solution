@@ -6,11 +6,9 @@ import androidx.lifecycle.ViewModel
 
 class GuessViewModel : ViewModel() {
 
-    private val _randomNumber = MutableLiveData<Int>()
+    val randomNumber = MutableLiveData<Int>()
 
-    private val _randomChar = MutableLiveData<Char>()
-    val randomChar: LiveData<Char>
-        get() = _randomChar
+    val randomChar = MutableLiveData<Char>()
 
     init {
         generateRandomNumber()
@@ -18,12 +16,12 @@ class GuessViewModel : ViewModel() {
 
     fun generateRandomNumber() {
         val random = java.util.Random()
-        _randomNumber.value = random.nextInt(10)
-        _randomChar.value = ('A'..'Z').random()
+        randomNumber.value = random.nextInt(10)
+        randomChar.value = ('A'..'Z').random()
     }
 
     fun checkGuess(guess: Int): Boolean {
-        val actualNumber = _randomNumber.value ?: return false
+        val actualNumber = randomNumber.value ?: return false
         return guess == actualNumber
     }
 

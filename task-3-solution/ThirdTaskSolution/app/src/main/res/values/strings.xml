@@ -9,4 +9,15 @@
     <string name="button_guess_text">Guess</string>
     <string name="navigate_counter_button_text">Counter Application</string>
     <string name="navigate_guess_button_text">Guess Application</string>
+    <string name="button_one_text">1</string>
+    <string name="button_two_text">2</string>
+    <string name="button_three_text">3</string>
+    <string name="button_four_text">4</string>
+    <string name="button_five_text">5</string>
+    <string name="button_six_text">6</string>
+    <string name="button_seven_text">7</string>
+    <string name="button_eight_text">8</string>
+    <string name="button_nine_text">9</string>
+    <string name="button_zero_text">0</string>
+    <string name="counter_default_number">0</string>
 </resources>
