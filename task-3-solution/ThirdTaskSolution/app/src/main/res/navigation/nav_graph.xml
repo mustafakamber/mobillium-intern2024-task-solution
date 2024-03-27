@@ -14,7 +14,11 @@
         android:id="@+id/guessFragment"
         android:name="com.example.thirdtasksolution.view.GuessFragment"
         android:label="fragment_guess"
-        tools:layout="@layout/fragment_guess" />
+        tools:layout="@layout/fragment_guess" >
+        <action
+            android:id="@+id/action_guessFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigateFragment"
         android:name="com.example.thirdtasksolution.view.NavigateFragment"
@@ -27,4 +31,9 @@
             android:id="@+id/action_navigateFragment_to_guessFragment"
             app:destination="@id/guessFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.thirdtasksolution.view.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
 </navigation>

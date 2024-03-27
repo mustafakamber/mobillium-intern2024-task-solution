@@ -7,22 +7,21 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.myapplication.databinding.FragmentCounterBinding
-import com.example.thirdtasksolution.util.CallBackHandler.navigateToPreviousFragment
 import com.example.thirdtasksolution.util.CallBackHandler.onBackPressed
+import com.example.thirdtasksolution.util.FragmentController.navigateToPreviousFragment
 import com.example.thirdtasksolution.viewmodel.CounterViewModel
 
 class CounterFragment : Fragment() {
 
-    private lateinit var counterFragmentBinding: FragmentCounterBinding
-    private val counterViewModel: CounterViewModel by viewModels()
+    private lateinit var binding: FragmentCounterBinding
+    private val viewModel: CounterViewModel by viewModels()
     private var counter: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = FragmentCounterBinding.inflate(inflater, container, false)
-        counterFragmentBinding = binding
+        binding = FragmentCounterBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -35,14 +34,16 @@ class CounterFragment : Fragment() {
 
         observeLiveData()
 
-        with(counterFragmentBinding) {
-            counterIncreaseButton.setOnClickListener {
-                if (counterSwitch.isChecked) {
-                    counterViewModel.increaseNumber()
-                } else {
-                    val updatedCounterNumber = increaseCounterNumber().toString()
-                    counterText.text = updatedCounterNumber
-                }
+        setupCounterScreen()
+    }
+
+    private fun setupCounterScreen() = with(binding) {
+        counterIncreaseButton.setOnClickListener {
+            if (counterSwitch.isChecked) {
+                viewModel.increaseNumber()
+            } else {
+                val updatedCounterNumber = increaseCounterNumber().toString()
+                counterText.text = updatedCounterNumber
             }
         }
     }
@@ -52,9 +53,9 @@ class CounterFragment : Fragment() {
     }
 
     private fun observeLiveData() {
-        counterViewModel.counterNumber.observe(viewLifecycleOwner) { counterNumberFromViewModel ->
-            counterNumberFromViewModel.let {
-                counterFragmentBinding.counterText.text = counterNumberFromViewModel.toString()
+        viewModel.counterNumber.observe(viewLifecycleOwner) { counterNumber ->
+            counterNumber?.let {
+                binding.counterText.text = counterNumber.toString()
             }
         }
     }

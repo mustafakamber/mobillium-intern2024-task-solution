@@ -1,6 +1,5 @@
 package com.example.thirdtasksolution.viewmodel
 
-
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
@@ -15,5 +14,4 @@ class CounterViewModel : ViewModel() {
     fun increaseNumber() {
         counterNumber.value = (counterNumber.value ?: 0) + 1
     }
-
 }

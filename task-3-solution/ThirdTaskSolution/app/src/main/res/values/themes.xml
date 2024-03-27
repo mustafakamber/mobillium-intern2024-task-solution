@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.ThirdTaskSolution" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
@@ -22,6 +22,18 @@
         <item name="android:layout_marginBottom">@dimen/medium_vertical_spacing</item>
         <item name="android:layout_marginStart">@dimen/medium_horizontal_spacing</item>
         <item name="android:layout_marginEnd">@dimen/medium_horizontal_spacing</item>
+    </style>
+
+    <style name="MediumTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/medium_text_size</item>
+    </style>
+
+    <style name="TableRowStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
 </resources>

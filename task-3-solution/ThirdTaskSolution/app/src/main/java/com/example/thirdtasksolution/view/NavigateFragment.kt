@@ -6,37 +6,38 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
-import androidx.navigation.fragment.findNavController
 import com.example.myapplication.databinding.FragmentNavigateBinding
+import com.example.thirdtasksolution.util.FragmentController.navigateToNewFragment
 
 class NavigateFragment : Fragment() {
 
-    private lateinit var navigateFragmentBinding: FragmentNavigateBinding
+    private lateinit var binding: FragmentNavigateBinding
+    private lateinit var action : NavDirections
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        val binding = FragmentNavigateBinding.inflate(inflater, container, false)
-        navigateFragmentBinding = binding
+        binding = FragmentNavigateBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) =
-        with(navigateFragmentBinding) {
-            super.onViewCreated(view, savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-            navigateCounterButton.setOnClickListener {
-                navigateFragment(NavigateFragmentDirections.actionNavigateFragmentToCounterFragment())
-            }
+        setupNavigateScreen()
+    }
 
-            navigateGuessButton.setOnClickListener {
-                navigateFragment(NavigateFragmentDirections.actionNavigateFragmentToGuessFragment())
-            }
+    private fun setupNavigateScreen() = with(binding) {
 
+        navigateCounterButton.setOnClickListener {
+            action = NavigateFragmentDirections.actionNavigateFragmentToCounterFragment()
+            navigateToNewFragment(action)
         }
 
-    private fun navigateFragment(navDirection: NavDirections) {
-        findNavController().navigate(navDirection)
+        navigateGuessButton.setOnClickListener {
+            action = NavigateFragmentDirections.actionNavigateFragmentToGuessFragment()
+            navigateToNewFragment(action)
+        }
     }
 
 }

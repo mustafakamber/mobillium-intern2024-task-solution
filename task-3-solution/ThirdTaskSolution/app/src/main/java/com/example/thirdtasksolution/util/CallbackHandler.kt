@@ -2,7 +2,6 @@ package com.example.thirdtasksolution.util
 
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 
 object CallBackHandler {
 
@@ -14,8 +13,5 @@ object CallBackHandler {
         }
         this.requireActivity().onBackPressedDispatcher.addCallback(callback)
     }
-    
-    fun Fragment.navigateToPreviousFragment(){
-        findNavController().popBackStack()
-    }
+
 }

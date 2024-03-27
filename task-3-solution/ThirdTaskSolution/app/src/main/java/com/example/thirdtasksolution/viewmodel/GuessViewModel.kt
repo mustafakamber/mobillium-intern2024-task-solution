@@ -3,26 +3,59 @@ package com.example.thirdtasksolution.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.myapplication.R
+import java.util.Random
 
 class GuessViewModel : ViewModel() {
 
-    val randomNumber = MutableLiveData<Int>()
+    private val random = Random()
 
-    val randomChar = MutableLiveData<Char>()
+    private val _randomNumber = MutableLiveData<Int>()
+    val randomNumber : LiveData<Int>
+        get() = _randomNumber
+
+    private val _gameResultMessage = MutableLiveData<Int>()
+    val gameResultMessage: LiveData<Int>
+        get() = _gameResultMessage
+
+    private val _randomChar = MutableLiveData<String>()
+    val randomChar: LiveData<String>
+        get() = _randomChar
 
     init {
         generateRandomNumber()
     }
 
     fun generateRandomNumber() {
-        val random = java.util.Random()
-        randomNumber.value = random.nextInt(10)
-        randomChar.value = ('A'..'Z').random()
+        _randomNumber.value = random.nextInt(10)
+        _randomChar.value = ('A'..'Z').random().toString()
+        _gameResultMessage.value = R.string.result_fail
     }
 
-    fun checkGuess(guess: Int): Boolean {
-        val actualNumber = randomNumber.value ?: return false
+    fun inputControl(userInput: String) {
+        val isInteger = userInput.toIntOrNull() != null
+        if (isInteger) {
+            val guessNumber = userInput.toInt()
+            gameResult(guessNumber)
+        } else {
+            _gameResultMessage.value = R.string.result_invalid_input
+        }
+    }
+
+    private fun checkGuess(guess: Int): Boolean {
+        val actualNumber = _randomNumber.value ?: return false
         return guess == actualNumber
+    }
+
+    private fun gameResult(guessNumber: Int?) {
+        guessNumber?.let {
+            val isEqual = checkGuess(guessNumber)
+            if (isEqual) {
+                _gameResultMessage.value = R.string.result_success
+            } else {
+                _gameResultMessage.value = R.string.result_fail
+            }
+        }
     }
 
 }
