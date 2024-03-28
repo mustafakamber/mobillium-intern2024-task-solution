@@ -14,7 +14,6 @@ import com.example.thirdtasksolution.util.FragmentController.navigateToPreviousF
 import com.example.thirdtasksolution.viewmodel.GuessViewModel
 import com.example.thirdtasksolution.viewmodel.SharedViewModel
 
-
 class GuessFragment : Fragment() {
 
     private lateinit var binding: FragmentGuessBinding
@@ -54,9 +53,9 @@ class GuessFragment : Fragment() {
             nineButton,
             zeroButton
         )
-        for (button in numberButtons) {
-            button.setOnClickListener {
-                val buttonText = button.text.toString()
+        for (numberButton in numberButtons) {
+            numberButton.setOnClickListener {
+                val buttonText = numberButton.text.toString()
                 showNumberInput(buttonText)
             }
         }

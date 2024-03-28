@@ -8,10 +8,10 @@ class CounterViewModel : ViewModel() {
     var counterNumber = MutableLiveData<Int>()
 
     init {
-        counterNumber.value = 0
+        counterNumber.postValue(0)
     }
 
     fun increaseNumber() {
-        counterNumber.value = (counterNumber.value ?: 0) + 1
+        counterNumber.postValue((counterNumber.value ?: 0) + 1)
     }
 }

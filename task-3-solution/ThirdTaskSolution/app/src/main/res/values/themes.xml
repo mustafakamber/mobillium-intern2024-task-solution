@@ -3,6 +3,12 @@
     <style name="Base.Theme.ThirdTaskSolution" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- Navigation bar color. -->
+        <item name="android:navigationBarColor">?attr/colorPrimary</item>
+        <item name="android:windowLightNavigationBar">false</item>
     </style>
 
     <style name="Theme.ThirdTaskSolution" parent="Base.Theme.ThirdTaskSolution" />

@@ -27,9 +27,9 @@ class GuessViewModel : ViewModel() {
     }
 
     fun generateRandomNumber() {
-        _randomNumber.value = random.nextInt(10)
-        _randomChar.value = ('A'..'Z').random().toString()
-        _gameResultMessage.value = R.string.result_fail
+        _randomNumber.postValue(random.nextInt(10))
+        _randomChar.postValue(('A'..'Z').random().toString())
+        _gameResultMessage.postValue(R.string.result_fail)
     }
 
     fun inputControl(userInput: String) {
@@ -38,7 +38,7 @@ class GuessViewModel : ViewModel() {
             val guessNumber = userInput.toInt()
             gameResult(guessNumber)
         } else {
-            _gameResultMessage.value = R.string.result_invalid_input
+            _gameResultMessage.postValue(R.string.result_invalid_input)
         }
     }
 
@@ -51,9 +51,9 @@ class GuessViewModel : ViewModel() {
         guessNumber?.let {
             val isEqual = checkGuess(guessNumber)
             if (isEqual) {
-                _gameResultMessage.value = R.string.result_success
+                _gameResultMessage.postValue(R.string.result_success)
             } else {
-                _gameResultMessage.value = R.string.result_fail
+                _gameResultMessage.postValue(R.string.result_fail)
             }
         }
     }
