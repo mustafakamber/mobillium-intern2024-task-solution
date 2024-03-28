@@ -32,7 +32,6 @@ class DetailFragment : Fragment() {
         }
 
         observeLiveData()
-
     }
 
     private fun observeLiveData() {

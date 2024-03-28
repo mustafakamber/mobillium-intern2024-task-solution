@@ -11,7 +11,7 @@ class GuessViewModel : ViewModel() {
     private val random = Random()
 
     private val _randomNumber = MutableLiveData<Int>()
-    val randomNumber : LiveData<Int>
+    val randomNumber: LiveData<Int>
         get() = _randomNumber
 
     private val _gameResultMessage = MutableLiveData<Int>()
@@ -33,11 +33,9 @@ class GuessViewModel : ViewModel() {
     }
 
     fun inputControl(userInput: String) {
-        val isInteger = userInput.toIntOrNull() != null
-        if (isInteger) {
-            val guessNumber = userInput.toInt()
-            gameResult(guessNumber)
-        } else {
+        userInput.toIntOrNull()?.let {
+            gameResult(it)
+        } ?: run {
             _gameResultMessage.postValue(R.string.result_invalid_input)
         }
     }
@@ -47,9 +45,8 @@ class GuessViewModel : ViewModel() {
         return guess == actualNumber
     }
 
-    private fun gameResult(guessNumber: Int?) {
-        guessNumber?.let {
-            val isEqual = checkGuess(guessNumber)
+    private fun gameResult(guessNumber: Int) {
+        checkGuess(guessNumber).let { isEqual ->
             if (isEqual) {
                 _gameResultMessage.postValue(R.string.result_success)
             } else {
