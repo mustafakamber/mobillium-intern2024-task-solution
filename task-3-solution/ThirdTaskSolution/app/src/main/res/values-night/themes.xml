@@ -1,0 +1,44 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ThirdTaskSolution" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- Navigation bar color. -->
+        <item name="android:navigationBarColor">@color/black</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+
+    <style name="Theme.ThirdTaskSolution" parent="Base.Theme.ThirdTaskSolution" />
+
+    <style name="GuessNumberButtonStyle">
+        <item name="android:textSize">@dimen/small_text_size</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">@integer/button_weight_size</item>
+        <item name="android:layout_margin">@dimen/small_spacing</item>
+    </style>
+
+    <style name="NavigateButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/medium_vertical_spacing</item>
+        <item name="android:layout_marginBottom">@dimen/medium_vertical_spacing</item>
+        <item name="android:layout_marginStart">@dimen/medium_horizontal_spacing</item>
+        <item name="android:layout_marginEnd">@dimen/medium_horizontal_spacing</item>
+    </style>
+
+    <style name="MediumTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/medium_text_size</item>
+    </style>
+
+    <style name="TableRowStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+</resources>
