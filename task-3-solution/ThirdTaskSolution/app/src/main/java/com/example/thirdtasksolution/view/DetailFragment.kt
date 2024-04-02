@@ -7,10 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.myapplication.databinding.FragmentDetailBinding
-import com.example.thirdtasksolution.util.CallBackHandler.onBackPressed
-import com.example.thirdtasksolution.util.FragmentController.navigateToPreviousFragment
 import com.example.thirdtasksolution.viewmodel.SharedViewModel
-
 
 class DetailFragment : Fragment() {
 
@@ -26,11 +23,6 @@ class DetailFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-        onBackPressed {
-            navigateToPreviousFragment()
-        }
-
         observeLiveData()
     }
 

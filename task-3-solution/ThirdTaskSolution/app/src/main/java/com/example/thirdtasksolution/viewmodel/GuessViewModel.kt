@@ -41,18 +41,15 @@ class GuessViewModel : ViewModel() {
     }
 
     private fun checkGuess(guess: Int): Boolean {
-        val actualNumber = _randomNumber.value ?: return false
-        return guess == actualNumber
+        return guess == _randomNumber.value
     }
 
     private fun gameResult(guessNumber: Int) {
-        checkGuess(guessNumber).let { isEqual ->
-            if (isEqual) {
-                _gameResultMessage.postValue(R.string.result_success)
-            } else {
-                _gameResultMessage.postValue(R.string.result_fail)
-            }
+        val messageResId = if (checkGuess(guessNumber)) {
+            R.string.result_success
+        } else {
+            R.string.result_fail
         }
+        _gameResultMessage.postValue(messageResId)
     }
-
 }

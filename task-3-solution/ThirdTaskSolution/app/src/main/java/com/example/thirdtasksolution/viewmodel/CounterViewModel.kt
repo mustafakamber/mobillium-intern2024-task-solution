@@ -12,6 +12,6 @@ class CounterViewModel : ViewModel() {
     }
 
     fun increaseNumber() {
-        counterNumber.postValue((counterNumber.value ?: 0) + 1)
+        counterNumber.postValue((counterNumber.value ?: 0).plus(1))
     }
 }

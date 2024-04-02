@@ -5,14 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import com.example.myapplication.databinding.FragmentNavigateBinding
-import com.example.thirdtasksolution.util.FragmentController.navigateToNewFragment
 
 class NavigateFragment : Fragment() {
 
     private lateinit var binding: FragmentNavigateBinding
-    private lateinit var action : NavDirections
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -23,21 +21,18 @@ class NavigateFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setupNavigateScreen()
     }
 
     private fun setupNavigateScreen() = with(binding) {
-
         navigateCounterButton.setOnClickListener {
-            action = NavigateFragmentDirections.actionNavigateFragmentToCounterFragment()
-            navigateToNewFragment(action)
+            val action = NavigateFragmentDirections.actionNavigateFragmentToCounterFragment()
+            findNavController().navigate(action)
         }
 
         navigateGuessButton.setOnClickListener {
-            action = NavigateFragmentDirections.actionNavigateFragmentToGuessFragment()
-            navigateToNewFragment(action)
+            val action = NavigateFragmentDirections.actionNavigateFragmentToGuessFragment()
+            findNavController().navigate(action)
         }
     }
-
 }

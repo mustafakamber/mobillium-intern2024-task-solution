@@ -7,10 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.myapplication.databinding.FragmentGuessBinding
-import com.example.thirdtasksolution.util.CallBackHandler.onBackPressed
-import com.example.thirdtasksolution.util.FragmentController.navigateToNewFragment
-import com.example.thirdtasksolution.util.FragmentController.navigateToPreviousFragment
 import com.example.thirdtasksolution.viewmodel.GuessViewModel
 import com.example.thirdtasksolution.viewmodel.SharedViewModel
 
@@ -29,18 +27,11 @@ class GuessFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        onBackPressed {
-            navigateToPreviousFragment()
-        }
-
         observeLiveData()
-
         setupGuessScreen()
     }
 
     private fun setupGuessScreen() = with(binding) {
-
         val numberButtons = arrayOf(
             oneButton,
             twoButton,
@@ -56,13 +47,13 @@ class GuessFragment : Fragment() {
         for (numberButton in numberButtons) {
             numberButton.setOnClickListener {
                 val buttonText = numberButton.text.toString()
-                showNumberInput(buttonText)
+                guessResultText.text = buttonText
             }
         }
 
         guessCharacterText.setOnClickListener {
             val action = GuessFragmentDirections.actionGuessFragmentToDetailFragment()
-            navigateToNewFragment(action)
+            findNavController().navigate(action)
         }
 
         clearButton.setOnClickListener {
@@ -73,11 +64,9 @@ class GuessFragment : Fragment() {
             val userInput = guessResultText.text.toString()
             viewModel.inputControl(userInput)
         }
-
     }
 
     private fun observeLiveData() {
-
         viewModel.randomChar.observe(viewLifecycleOwner) { randomChar ->
             randomChar?.let {
                 binding.guessCharacterText.text = randomChar
@@ -96,9 +85,4 @@ class GuessFragment : Fragment() {
             }
         }
     }
-
-    private fun showNumberInput(numberInput: String) = with(binding) {
-        guessResultText.text = numberInput
-    }
-
 }

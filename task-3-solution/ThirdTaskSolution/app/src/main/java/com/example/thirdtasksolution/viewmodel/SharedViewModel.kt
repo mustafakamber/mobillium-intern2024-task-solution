@@ -13,5 +13,4 @@ class SharedViewModel : ViewModel() {
     fun updateHiddenNumber(number: Int) {
         _hiddenNumber.postValue(number)
     }
-
 }
